@@ -1,0 +1,16 @@
+PODS:
+  - FSRoutes (0.0.1)
+
+DEPENDENCIES:
+  - FSRoutes (from `../`)
+
+EXTERNAL SOURCES:
+  FSRoutes:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FSRoutes: 7c0f585809759887fbacafd1ec009efae618da25
+
+PODFILE CHECKSUM: a7a31950531f55ddfb88aaee16068536922c57fb
+
+COCOAPODS: 1.2.1

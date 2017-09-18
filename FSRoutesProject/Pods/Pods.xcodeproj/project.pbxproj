@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		38CA41E228415F54C7B3FDE1BF1AC77B /* FSRoutes-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6C20F099FC3BBB5F229A0E771D9FC7 /* FSRoutes-dummy.m */; };
+		51F0BC5CDC50C6DF9503104FB191B45F /* FSRoutes.m in Sources */ = {isa = PBXBuildFile; fileRef = 591AC2C797F0A4A524370CFCF54A3195 /* FSRoutes.m */; };
+		72E5054D30FB68EBB7D4579E169EC9DC /* FSRoutes.h in Headers */ = {isa = PBXBuildFile; fileRef = D7CBD32DDB4A48931CB7726FE0D28E69 /* FSRoutes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7571C45E82EF743CDA6C9FD8415F5A6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		A92263851EFDBFC69E9C1D53C87DFC7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		EDEA9AD78194A1325154BD664978A8EA /* Pods-FSRoutesProject-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1E447B32DBD0059E196A6940991914 /* Pods-FSRoutesProject-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7886E7C56A95E22C560BDA6AC7A1C758 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B249B149187D1A6A3C85C429DF419664;
+			remoteInfo = FSRoutes;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C1E447B32DBD0059E196A6940991914 /* Pods-FSRoutesProject-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FSRoutesProject-dummy.m"; sourceTree = "<group>"; };
+		20D6B9A436DD14A2B3DA3C10A5E2927E /* FSRoutes-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FSRoutes-prefix.pch"; sourceTree = "<group>"; };
+		2C0CA330634D97556CB1B4E35B7AD163 /* libFSRoutes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libFSRoutes.a; path = libFSRoutes.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		41F6C1466B21D170963EEF9F4C0A2430 /* Pods-FSRoutesProject-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FSRoutesProject-acknowledgements.markdown"; sourceTree = "<group>"; };
+		591AC2C797F0A4A524370CFCF54A3195 /* FSRoutes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FSRoutes.m; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6665C9D53B6155FB441D3DAA4B48F174 /* Pods-FSRoutesProject-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FSRoutesProject-frameworks.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A897945CB08BBA19B3D0BAC3F7F2C42F /* libPods-FSRoutesProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-FSRoutesProject.a"; path = "libPods-FSRoutesProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB7083DB850EA09F1BF471FBBA9A1FBE /* Pods-FSRoutesProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FSRoutesProject.release.xcconfig"; sourceTree = "<group>"; };
+		AE67CF281029497DF816ECE4508459E1 /* Pods-FSRoutesProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FSRoutesProject.debug.xcconfig"; sourceTree = "<group>"; };
+		BCFA3A9EE3FC347628A3B66D2C7117B0 /* FSRoutes.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FSRoutes.xcconfig; sourceTree = "<group>"; };
+		BF09E880C2BBBAB6326EB3ADB6B76C46 /* Pods-FSRoutesProject-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FSRoutesProject-acknowledgements.plist"; sourceTree = "<group>"; };
+		D4731E3B277D49A37A19EB952ADBB121 /* Pods-FSRoutesProject-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FSRoutesProject-resources.sh"; sourceTree = "<group>"; };
+		D7CBD32DDB4A48931CB7726FE0D28E69 /* FSRoutes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FSRoutes.h; sourceTree = "<group>"; };
+		EF6C20F099FC3BBB5F229A0E771D9FC7 /* FSRoutes-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FSRoutes-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0128C23AB65B6D47E042F9119F3E3FBA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A92263851EFDBFC69E9C1D53C87DFC7B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F235D8D21D0F89EF4DF1D9FC36BE10C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7571C45E82EF743CDA6C9FD8415F5A6B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A584DB6B4188A40FF9F6B5F28A6FC5C /* Pods-FSRoutesProject */ = {
+			isa = PBXGroup;
+			children = (
+				41F6C1466B21D170963EEF9F4C0A2430 /* Pods-FSRoutesProject-acknowledgements.markdown */,
+				BF09E880C2BBBAB6326EB3ADB6B76C46 /* Pods-FSRoutesProject-acknowledgements.plist */,
+				0C1E447B32DBD0059E196A6940991914 /* Pods-FSRoutesProject-dummy.m */,
+				6665C9D53B6155FB441D3DAA4B48F174 /* Pods-FSRoutesProject-frameworks.sh */,
+				D4731E3B277D49A37A19EB952ADBB121 /* Pods-FSRoutesProject-resources.sh */,
+				AE67CF281029497DF816ECE4508459E1 /* Pods-FSRoutesProject.debug.xcconfig */,
+				AB7083DB850EA09F1BF471FBBA9A1FBE /* Pods-FSRoutesProject.release.xcconfig */,
+			);
+			name = "Pods-FSRoutesProject";
+			path = "Target Support Files/Pods-FSRoutesProject";
+			sourceTree = "<group>";
+		};
+		10BDE4920FF7F9D8B3798A453E810CA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C0CA330634D97556CB1B4E35B7AD163 /* libFSRoutes.a */,
+				A897945CB08BBA19B3D0BAC3F7F2C42F /* libPods-FSRoutesProject.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		64A32CE06B8104057434B9B6142ABA66 /* FSRoutes */ = {
+			isa = PBXGroup;
+			children = (
+				D7CBD32DDB4A48931CB7726FE0D28E69 /* FSRoutes.h */,
+				591AC2C797F0A4A524370CFCF54A3195 /* FSRoutes.m */,
+			);
+			name = FSRoutes;
+			path = FSRoutes;
+			sourceTree = "<group>";
+		};
+		67CF9D4E0B19499AF16C1B7D4827BF14 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0A584DB6B4188A40FF9F6B5F28A6FC5C /* Pods-FSRoutesProject */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		6FEAC6E13C4EFFED76ABE1B2CE60ADA2 /* FSRoutes */ = {
+			isa = PBXGroup;
+			children = (
+				64A32CE06B8104057434B9B6142ABA66 /* FSRoutes */,
+				8B95A29C941B03284D1C8C2B2AB25F27 /* Support Files */,
+			);
+			name = FSRoutes;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				A92008D37357FBAE5F6B09E77832004F /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				10BDE4920FF7F9D8B3798A453E810CA5 /* Products */,
+				67CF9D4E0B19499AF16C1B7D4827BF14 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8B95A29C941B03284D1C8C2B2AB25F27 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BCFA3A9EE3FC347628A3B66D2C7117B0 /* FSRoutes.xcconfig */,
+				EF6C20F099FC3BBB5F229A0E771D9FC7 /* FSRoutes-dummy.m */,
+				20D6B9A436DD14A2B3DA3C10A5E2927E /* FSRoutes-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "FSRoutesProject/Pods/Target Support Files/FSRoutes";
+			sourceTree = "<group>";
+		};
+		A92008D37357FBAE5F6B09E77832004F /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6FEAC6E13C4EFFED76ABE1B2CE60ADA2 /* FSRoutes */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F170992476F5A5E9449BAC4F1F38B816 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72E5054D30FB68EBB7D4579E169EC9DC /* FSRoutes.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		9CC97EA076CB46311CCB83EA9CD17585 /* Pods-FSRoutesProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 014E598E8A5898531D9365D453B93DA9 /* Build configuration list for PBXNativeTarget "Pods-FSRoutesProject" */;
+			buildPhases = (
+				CEB730392284B76615AB2E203CA163F3 /* Sources */,
+				F235D8D21D0F89EF4DF1D9FC36BE10C9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE6CCC1EB38C101EB512D3C350F37A65 /* PBXTargetDependency */,
+			);
+			name = "Pods-FSRoutesProject";
+			productName = "Pods-FSRoutesProject";
+			productReference = A897945CB08BBA19B3D0BAC3F7F2C42F /* libPods-FSRoutesProject.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		B249B149187D1A6A3C85C429DF419664 /* FSRoutes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 595C54AB9DAEA25ED3EF15B6A5B323CE /* Build configuration list for PBXNativeTarget "FSRoutes" */;
+			buildPhases = (
+				04D8C6DCF6BE517C8312909C524B8088 /* Sources */,
+				0128C23AB65B6D47E042F9119F3E3FBA /* Frameworks */,
+				F170992476F5A5E9449BAC4F1F38B816 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FSRoutes;
+			productName = FSRoutes;
+			productReference = 2C0CA330634D97556CB1B4E35B7AD163 /* libFSRoutes.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 10BDE4920FF7F9D8B3798A453E810CA5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B249B149187D1A6A3C85C429DF419664 /* FSRoutes */,
+				9CC97EA076CB46311CCB83EA9CD17585 /* Pods-FSRoutesProject */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04D8C6DCF6BE517C8312909C524B8088 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38CA41E228415F54C7B3FDE1BF1AC77B /* FSRoutes-dummy.m in Sources */,
+				51F0BC5CDC50C6DF9503104FB191B45F /* FSRoutes.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB730392284B76615AB2E203CA163F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDEA9AD78194A1325154BD664978A8EA /* Pods-FSRoutesProject-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE6CCC1EB38C101EB512D3C350F37A65 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FSRoutes;
+			target = B249B149187D1A6A3C85C429DF419664 /* FSRoutes */;
+			targetProxy = 7886E7C56A95E22C560BDA6AC7A1C758 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0DF519F588FA1EAEF99390DC4BD2A480 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCFA3A9EE3FC347628A3B66D2C7117B0 /* FSRoutes.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FSRoutes/FSRoutes-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		35FEDDB56DFC819B151283E6870CB95F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB7083DB850EA09F1BF471FBBA9A1FBE /* Pods-FSRoutesProject.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3EA53B1674181146FF515A49799EDFFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE67CF281029497DF816ECE4508459E1 /* Pods-FSRoutesProject.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4E487F173E6C9664F4E9E26B9635D23C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		BDD0139D6EB93FA375F887ABD62DAB2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C9FD1C7079B05C0000DA44D946E46C84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCFA3A9EE3FC347628A3B66D2C7117B0 /* FSRoutes.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FSRoutes/FSRoutes-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		014E598E8A5898531D9365D453B93DA9 /* Build configuration list for PBXNativeTarget "Pods-FSRoutesProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EA53B1674181146FF515A49799EDFFD /* Debug */,
+				35FEDDB56DFC819B151283E6870CB95F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E487F173E6C9664F4E9E26B9635D23C /* Debug */,
+				BDD0139D6EB93FA375F887ABD62DAB2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		595C54AB9DAEA25ED3EF15B6A5B323CE /* Build configuration list for PBXNativeTarget "FSRoutes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DF519F588FA1EAEF99390DC4BD2A480 /* Debug */,
+				C9FD1C7079B05C0000DA44D946E46C84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

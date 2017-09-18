@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3EF9091CA7B48F8ACDF7982E /* libPods-FSRoutesProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC85F37783B757780E4E6AAD /* libPods-FSRoutesProject.a */; };
 		E0196F901F70381E002C12A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0196F8F1F70381E002C12A5 /* AppDelegate.m */; };
 		E0196F931F70381E002C12A5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0196F921F70381E002C12A5 /* ViewController.m */; };
 		E0196F961F70381E002C12A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0196F941F70381E002C12A5 /* Main.storyboard */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C3F3297D21B85765025E77C /* Pods-FSRoutesProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSRoutesProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-FSRoutesProject/Pods-FSRoutesProject.release.xcconfig"; sourceTree = "<group>"; };
+		7BC7B3A400811C0681475967 /* Pods-FSRoutesProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSRoutesProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FSRoutesProject/Pods-FSRoutesProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E0196F8B1F70381E002C12A5 /* FSRoutesProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSRoutesProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0196F8E1F70381E002C12A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E0196F8F1F70381E002C12A5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		E0196FAE1F70381E002C12A5 /* FSRoutesProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FSRoutesProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0196FB21F70381E002C12A5 /* FSRoutesProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSRoutesProjectUITests.m; sourceTree = "<group>"; };
 		E0196FB41F70381E002C12A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC85F37783B757780E4E6AAD /* libPods-FSRoutesProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FSRoutesProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EF9091CA7B48F8ACDF7982E /* libPods-FSRoutesProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +90,8 @@
 				E0196FA61F70381E002C12A5 /* FSRoutesProjectTests */,
 				E0196FB11F70381E002C12A5 /* FSRoutesProjectUITests */,
 				E0196F8C1F70381E002C12A5 /* Products */,
+				FE29E94A7BE4A3802F25ABBE /* Pods */,
+				ECBD441D60D67B43CB46F0CB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +139,23 @@
 			path = FSRoutesProjectUITests;
 			sourceTree = "<group>";
 		};
+		ECBD441D60D67B43CB46F0CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC85F37783B757780E4E6AAD /* libPods-FSRoutesProject.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE29E94A7BE4A3802F25ABBE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7BC7B3A400811C0681475967 /* Pods-FSRoutesProject.debug.xcconfig */,
+				6C3F3297D21B85765025E77C /* Pods-FSRoutesProject.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +163,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E0196FB71F70381E002C12A5 /* Build configuration list for PBXNativeTarget "FSRoutesProject" */;
 			buildPhases = (
+				A791BFB983575224B1B61475 /* [CP] Check Pods Manifest.lock */,
 				E0196F871F70381E002C12A5 /* Sources */,
 				E0196F881F70381E002C12A5 /* Frameworks */,
 				E0196F891F70381E002C12A5 /* Resources */,
+				A642CCA6831CCC36CA88D62D /* [CP] Embed Pods Frameworks */,
+				FC09021C5B035D11742A2829 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,6 +286,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A642CCA6831CCC36CA88D62D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FSRoutesProject/Pods-FSRoutesProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A791BFB983575224B1B61475 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FC09021C5B035D11742A2829 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FSRoutesProject/Pods-FSRoutesProject-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E0196F871F70381E002C12A5 /* Sources */ = {
@@ -428,10 +503,12 @@
 		};
 		E0196FB81F70381E002C12A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BC7B3A400811C0681475967 /* Pods-FSRoutesProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FSRoutesProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qfu.FSRoutesProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -441,10 +518,12 @@
 		};
 		E0196FB91F70381E002C12A5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C3F3297D21B85765025E77C /* Pods-FSRoutesProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FSRoutesProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qfu.FSRoutesProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
