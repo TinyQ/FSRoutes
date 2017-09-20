@@ -23,6 +23,10 @@
     return self;
 }
 
+- (void)dealloc {
+    
+}
+
 - (BOOL)routeURL:(NSURL *)URL {
     return [self routeURL:URL parameters:nil];
 }

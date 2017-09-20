@@ -16,6 +16,8 @@
 		E0196F9E1F70381E002C12A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0196F9D1F70381E002C12A5 /* main.m */; };
 		E0196FA81F70381E002C12A5 /* FSRoutesProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0196FA71F70381E002C12A5 /* FSRoutesProjectTests.m */; };
 		E0196FB31F70381E002C12A5 /* FSRoutesProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0196FB21F70381E002C12A5 /* FSRoutesProjectUITests.m */; };
+		E08EF49F1F72CC1E00564200 /* DPLMatchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E08EF49C1F72CC1E00564200 /* DPLMatchResult.m */; };
+		E08EF4A01F72CC1E00564200 /* DPLRegularExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = E08EF49D1F72CC1E00564200 /* DPLRegularExpression.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,10 @@
 		E0196FAE1F70381E002C12A5 /* FSRoutesProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FSRoutesProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0196FB21F70381E002C12A5 /* FSRoutesProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSRoutesProjectUITests.m; sourceTree = "<group>"; };
 		E0196FB41F70381E002C12A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E08EF49B1F72CC1D00564200 /* DPLMatchResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPLMatchResult.h; sourceTree = "<group>"; };
+		E08EF49C1F72CC1E00564200 /* DPLMatchResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DPLMatchResult.m; sourceTree = "<group>"; };
+		E08EF49D1F72CC1E00564200 /* DPLRegularExpression.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DPLRegularExpression.m; sourceTree = "<group>"; };
+		E08EF49E1F72CC1E00564200 /* DPLRegularExpression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPLRegularExpression.h; sourceTree = "<group>"; };
 		EC85F37783B757780E4E6AAD /* libPods-FSRoutesProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FSRoutesProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -110,6 +116,10 @@
 			children = (
 				E0196F8E1F70381E002C12A5 /* AppDelegate.h */,
 				E0196F8F1F70381E002C12A5 /* AppDelegate.m */,
+				E08EF49B1F72CC1D00564200 /* DPLMatchResult.h */,
+				E08EF49C1F72CC1E00564200 /* DPLMatchResult.m */,
+				E08EF49E1F72CC1E00564200 /* DPLRegularExpression.h */,
+				E08EF49D1F72CC1E00564200 /* DPLRegularExpression.m */,
 				E0196F911F70381E002C12A5 /* ViewController.h */,
 				E0196F921F70381E002C12A5 /* ViewController.m */,
 				E0196F941F70381E002C12A5 /* Main.storyboard */,
@@ -341,8 +351,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0196F931F70381E002C12A5 /* ViewController.m in Sources */,
+				E08EF4A01F72CC1E00564200 /* DPLRegularExpression.m in Sources */,
 				E0196F9E1F70381E002C12A5 /* main.m in Sources */,
 				E0196F901F70381E002C12A5 /* AppDelegate.m in Sources */,
+				E08EF49F1F72CC1E00564200 /* DPLMatchResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
