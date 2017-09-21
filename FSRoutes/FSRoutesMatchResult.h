@@ -9,4 +9,7 @@
 
 @interface FSRoutesMatchResult : NSObject
 
+@property (nonatomic) BOOL isMatch;
+@property (nonatomic) NSArray<NSString *> *pathParameters;
+
 @end

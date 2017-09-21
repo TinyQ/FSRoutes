@@ -7,6 +7,8 @@
 
 #import "FSRoutesMatcher.h"
 
+static NSString * const FSRoutesMatcherPathParametersPattern = @":[a-zA-Z0-9-_][^/]+";
+
 @interface FSRoutesMatcher()
 
 @property (nonatomic) NSString *rule;
@@ -41,8 +43,9 @@
     if (![self.rule_scheme isEqualToString:url_scheme]) {
         return nil;
     }
+    FSRoutesMatchResult *result = [[FSRoutesMatchResult alloc] init];
     // TODO:
-    return nil;
+    return result;
 }
 
 #pragma mark - private
@@ -55,6 +58,21 @@
 - (NSString *)expressionFromRule:(NSString *)rule {
     NSArray *parts = [rule componentsSeparatedByString:@"://"];
     return parts.count == 2 ? [parts lastObject] : nil;
+}
+
++ (NSArray<NSString *> *)pathParametersFromExpression:(NSString *)expression {
+    NSRegularExpression *componentRegex = [NSRegularExpression regularExpressionWithPattern:FSRoutesMatcherPathParametersPattern
+                                                                                    options:0
+                                                                                      error:nil];
+    NSArray *matches = [componentRegex matchesInString:expression
+                                               options:0
+                                                 range:NSMakeRange(0, expression.length)];
+    NSMutableArray *namedGroupTokens = [NSMutableArray array];
+    for (NSTextCheckingResult *result in matches) {
+        NSString *namedGroupToken = [expression substringWithRange:result.range];
+        [namedGroupTokens addObject:namedGroupToken];
+    }
+    return [NSArray arrayWithArray:namedGroupTokens];
 }
 
 @end
