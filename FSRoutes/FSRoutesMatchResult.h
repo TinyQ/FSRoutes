@@ -9,7 +9,7 @@
 
 @interface FSRoutesMatchResult : NSObject
 
-@property (nonatomic) BOOL isMatch;
-@property (nonatomic) NSArray<NSString *> *pathParameters;
+@property (nonatomic) BOOL match;
+@property (nonatomic) NSDictionary<NSString *,NSString *> *routeParameter;
 
 @end

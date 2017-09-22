@@ -7,13 +7,17 @@
 
 #import "FSRoutesMatcher.h"
 
-static NSString * const FSRoutesMatcherPathParametersPattern = @":[a-zA-Z0-9-_][^/]+";
+static NSString * const FSRNamedGroupComponentPattern = @":[a-zA-Z0-9-_][^/]+";
+static NSString * const FSRRouteParameterPattern      = @":[a-zA-Z0-9-_]+";
+static NSString * const FSRURLParameterPattern        = @"([^/]+)";
 
 @interface FSRoutesMatcher()
 
 @property (nonatomic) NSString *rule;
-@property (nonatomic) NSString *rule_scheme;
-@property (nonatomic) NSString *rule_expression;
+@property (nonatomic) NSArray<NSString *> *schemeAndExpression;
+@property (nonatomic) NSArray<NSString *> *routeParameterKeys;
+@property (nonatomic) NSString *routePattern;
+@property (nonatomic) NSRegularExpression *regularExpression;
 
 @end
 
@@ -28,8 +32,9 @@ static NSString * const FSRoutesMatcherPathParametersPattern = @":[a-zA-Z0-9-_][
     self = [super init];
     if (self) {
         _rule = rule;
-        _rule_scheme = [self schemeFromRule:rule];
-        _rule_expression = [self expressionFromRule:rule];
+        _schemeAndExpression = [[self class] separatedSchemeAndExpressFromRule:rule];
+        _routeParameterKeys = [[self class] routeParametersFromeRule:rule];
+        _routePattern = [[self class] routePatternFromRule:[self expression]];
     }
     return self;
 }
@@ -37,42 +42,137 @@ static NSString * const FSRoutesMatcherPathParametersPattern = @":[a-zA-Z0-9-_][
 - (FSRoutesMatchResult *)match:(NSURL *)url {
     NSParameterAssert(url);
     NSString *url_scheme = url.scheme;
-    if (!self.rule_scheme) {
+    if (!self.scheme) {
         return nil;
     }
-    if (![self.rule_scheme isEqualToString:url_scheme]) {
+    if (![self.scheme isEqualToString:url_scheme]) {
         return nil;
     }
-    FSRoutesMatchResult *result = [[FSRoutesMatchResult alloc] init];
-    // TODO:
-    return result;
+    FSRoutesMatchResult *matchResult = [[FSRoutesMatchResult alloc] init];
+    NSString *matchString = [[self class] matchStringFromURL:url];
+    if (self.regularExpression == nil) {
+        self.regularExpression = [[NSRegularExpression alloc] initWithPattern:self.routePattern options:0 error:nil];
+    }
+    NSArray *matches = [self.regularExpression matchesInString:matchString options:0 range:NSMakeRange(0, matchString.length)];
+    if (!matches.count) {
+        return matchResult;
+    }
+    matchResult.match = YES;
+    // Set route parameters in the routeParameters dictionary
+    NSMutableDictionary *routeParameters = [NSMutableDictionary dictionary];
+    for (NSTextCheckingResult *result in matches) {
+        // Begin at 1 as first range is the whole match
+        for (NSInteger i = 1; i < result.numberOfRanges && i <= self.routeParameterKeys.count; i++) {
+            NSString *parameterName         = self.routeParameterKeys[i - 1];
+            NSString *parameterValue        = [matchString substringWithRange:[result rangeAtIndex:i]];
+            routeParameters[parameterName]  = parameterValue;
+        }
+    }
+    matchResult.routeParameter = routeParameters;
+    return matchResult;
 }
 
 #pragma mark - private
 
-- (NSString *)schemeFromRule:(NSString *)rule {
-    NSArray *parts = [rule componentsSeparatedByString:@"://"];
-    return parts.count > 1 ? [parts firstObject] : nil;
+- (NSString *)scheme {
+    NSArray *array =  self.schemeAndExpression;
+    return array.count > 1 ? [array firstObject] : nil;
 }
 
-- (NSString *)expressionFromRule:(NSString *)rule {
-    NSArray *parts = [rule componentsSeparatedByString:@"://"];
-    return parts.count == 2 ? [parts lastObject] : nil;
+- (NSString *)expression {
+    NSArray *array =  self.schemeAndExpression;
+    return array.count > 1 ? [array lastObject] : nil;
 }
 
-+ (NSArray<NSString *> *)pathParametersFromExpression:(NSString *)expression {
-    NSRegularExpression *componentRegex = [NSRegularExpression regularExpressionWithPattern:FSRoutesMatcherPathParametersPattern
+#pragma mark - helper
+
++ (NSString *)matchStringFromURL:(NSURL *)URL {
+    return [NSString stringWithFormat:@"%@%@", URL.host, URL.path];
+}
+
++ (NSArray<NSString *> *)separatedSchemeAndExpressFromRule:(NSString *)rule {
+    NSString *str = [rule copy];
+    NSArray *parts = [str componentsSeparatedByString:@"://"];
+    if (parts.count != 2) {
+        return nil;
+    }
+    return parts;
+}
+
++ (NSArray<NSString *> *)routeParametersTokensFromeRule:(NSString *)rule {
+    NSString *str = [rule copy];
+    NSInteger length = rule.length;
+    NSRegularExpression *componentRegex = [NSRegularExpression regularExpressionWithPattern:FSRNamedGroupComponentPattern
                                                                                     options:0
                                                                                       error:nil];
-    NSArray *matches = [componentRegex matchesInString:expression
+    NSArray *matches = [componentRegex matchesInString:str
                                                options:0
-                                                 range:NSMakeRange(0, expression.length)];
+                                                 range:NSMakeRange(0, length)];
     NSMutableArray *namedGroupTokens = [NSMutableArray array];
     for (NSTextCheckingResult *result in matches) {
-        NSString *namedGroupToken = [expression substringWithRange:result.range];
+        NSString *namedGroupToken = [str substringWithRange:result.range];
         [namedGroupTokens addObject:namedGroupToken];
     }
     return [NSArray arrayWithArray:namedGroupTokens];
+}
+
++ (NSArray<NSString *> *)routeParametersFromeRule:(NSString *)rule {
+    NSString *str = [rule copy];
+    NSMutableArray *groupNames = [NSMutableArray array];
+    
+    NSArray *namedGroupExpressions = [self routeParametersTokensFromeRule:str];
+    NSRegularExpression *parameterRegex = [NSRegularExpression regularExpressionWithPattern:FSRRouteParameterPattern
+                                                                                    options:0
+                                                                                      error:nil];
+    for (NSString *namedExpression in namedGroupExpressions) {
+        NSArray *componentMatches = [parameterRegex matchesInString:namedExpression
+                                                            options:0
+                                                              range:NSMakeRange(0, namedExpression.length)];
+        NSTextCheckingResult *foundGroupName = [componentMatches firstObject];
+        if (foundGroupName) {
+            NSString *stringToReplace  = [namedExpression substringWithRange:foundGroupName.range];
+            NSString *variableName     = [stringToReplace stringByReplacingOccurrencesOfString:@":"
+                                                                                    withString:@""];
+            
+            [groupNames addObject:variableName];
+        }
+    }
+    return [NSArray arrayWithArray:groupNames];
+}
+
++ (NSString *)routePatternFromRule:(NSString *)rule {
+    NSString *modifiedStr = [rule copy];
+    NSArray *namedGroupExpressions = [self routeParametersTokensFromeRule:modifiedStr];
+    NSRegularExpression *parameterRegex = [NSRegularExpression regularExpressionWithPattern:FSRRouteParameterPattern
+                                                                                    options:0
+                                                                                      error:nil];
+    // For each of the named group expressions (including name & regex)
+    for (NSString *namedExpression in namedGroupExpressions) {
+        NSString *replacementExpression       = [namedExpression copy];
+        NSTextCheckingResult *foundGroupName  = [[parameterRegex matchesInString:namedExpression
+                                                                         options:0
+                                                                           range:NSMakeRange(0, namedExpression.length)] firstObject];
+        // If it's a named group, remove the name
+        if (foundGroupName) {
+            NSString *stringToReplace  = [namedExpression substringWithRange:foundGroupName.range];
+            replacementExpression = [replacementExpression stringByReplacingOccurrencesOfString:stringToReplace
+                                                                                     withString:@""];
+        }
+        
+        // If it was a named group, without regex constraining it, put in default regex
+        if (replacementExpression.length == 0) {
+            replacementExpression = FSRURLParameterPattern;
+        }
+        
+        modifiedStr = [modifiedStr stringByReplacingOccurrencesOfString:namedExpression
+                                                             withString:replacementExpression];
+    }
+    
+    if (modifiedStr.length && !([modifiedStr characterAtIndex:0] == '/')) {
+        modifiedStr = [@"^" stringByAppendingString:modifiedStr];
+    }
+    modifiedStr = [modifiedStr stringByAppendingString:@"$"];
+    return modifiedStr;
 }
 
 @end

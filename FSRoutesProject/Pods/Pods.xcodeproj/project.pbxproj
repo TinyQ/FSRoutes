@@ -3,19 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38CA41E228415F54C7B3FDE1BF1AC77B /* FSRoutes-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6C20F099FC3BBB5F229A0E771D9FC7 /* FSRoutes-dummy.m */; };
-		51F0BC5CDC50C6DF9503104FB191B45F /* FSRoutes.m in Sources */ = {isa = PBXBuildFile; fileRef = 591AC2C797F0A4A524370CFCF54A3195 /* FSRoutes.m */; };
-		72E5054D30FB68EBB7D4579E169EC9DC /* FSRoutes.h in Headers */ = {isa = PBXBuildFile; fileRef = D7CBD32DDB4A48931CB7726FE0D28E69 /* FSRoutes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0C6A450A7C33D8145AFDC82A44575B94 /* FSRoutesMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FC8EFDB50CBF2EF171E64418BAEC20E /* FSRoutesMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29FE2464207E207AE510EF6EF460B4FC /* FSRoutes.m in Sources */ = {isa = PBXBuildFile; fileRef = 6114763C083251300F662E7D1BE703D4 /* FSRoutes.m */; };
+		3B20899E855E7F02550F356B6AA39890 /* FSRoutesMatchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E27B786FC0B3E5AE3D8A5EAB69E9C8E7 /* FSRoutesMatchResult.m */; };
+		4AC6CE8C9336EDD1299E817E4E902EEE /* FSRoutes.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BD80318AA50183F821234145788272A /* FSRoutes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7571C45E82EF743CDA6C9FD8415F5A6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		A92263851EFDBFC69E9C1D53C87DFC7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		E08EF4A31F72CE2700564200 /* FSRoutesMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = E08EF4A11F72CE2700564200 /* FSRoutesMatcher.h */; };
-		E08EF4A41F72CE2700564200 /* FSRoutesMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E08EF4A21F72CE2700564200 /* FSRoutesMatcher.m */; };
-		E08EF4A71F72D07B00564200 /* FSRoutesMatchResult.h in Headers */ = {isa = PBXBuildFile; fileRef = E08EF4A51F72D07B00564200 /* FSRoutesMatchResult.h */; };
-		E08EF4A81F72D07B00564200 /* FSRoutesMatchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E08EF4A61F72D07B00564200 /* FSRoutesMatchResult.m */; };
+		8C85903D0838BD47CE9A5A02B098ED40 /* FSRoutes-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E0DDCD0A1D6A43BCB4047670D0FFD3 /* FSRoutes-dummy.m */; };
+		D5594CB1A78893F21CC39729F56DD5E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		D91153A67600CA49DA6B177EB26825D1 /* FSRoutesMatchResult.h in Headers */ = {isa = PBXBuildFile; fileRef = DA6502C93CB11A17713301339FEE0A61 /* FSRoutesMatchResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E6588AA472D4990358C0AFC42F790033 /* FSRoutesMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C85B04ED3EA2B5CA7F351E60A72F9B9 /* FSRoutesMatcher.m */; };
 		EDEA9AD78194A1325154BD664978A8EA /* Pods-FSRoutesProject-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1E447B32DBD0059E196A6940991914 /* Pods-FSRoutesProject-dummy.m */; };
 /* End PBXBuildFile section */
 
@@ -24,40 +24,40 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B249B149187D1A6A3C85C429DF419664;
+			remoteGlobalIDString = 21D4306A00EB672252E07EEA04E8B12C;
 			remoteInfo = FSRoutes;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0C1E447B32DBD0059E196A6940991914 /* Pods-FSRoutesProject-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FSRoutesProject-dummy.m"; sourceTree = "<group>"; };
-		20D6B9A436DD14A2B3DA3C10A5E2927E /* FSRoutes-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FSRoutes-prefix.pch"; sourceTree = "<group>"; };
-		2C0CA330634D97556CB1B4E35B7AD163 /* libFSRoutes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFSRoutes.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BD80318AA50183F821234145788272A /* FSRoutes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSRoutes.h; path = FSRoutes/FSRoutes.h; sourceTree = "<group>"; };
+		2C0CA330634D97556CB1B4E35B7AD163 /* libFSRoutes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libFSRoutes.a; path = libFSRoutes.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F6C1466B21D170963EEF9F4C0A2430 /* Pods-FSRoutesProject-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FSRoutesProject-acknowledgements.markdown"; sourceTree = "<group>"; };
-		591AC2C797F0A4A524370CFCF54A3195 /* FSRoutes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FSRoutes.m; sourceTree = "<group>"; };
+		49E0DDCD0A1D6A43BCB4047670D0FFD3 /* FSRoutes-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FSRoutes-dummy.m"; sourceTree = "<group>"; };
+		546A14386AB66A85265A923B330789D0 /* FSRoutes-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FSRoutes-prefix.pch"; sourceTree = "<group>"; };
+		6114763C083251300F662E7D1BE703D4 /* FSRoutes.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSRoutes.m; path = FSRoutes/FSRoutes.m; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6665C9D53B6155FB441D3DAA4B48F174 /* Pods-FSRoutesProject-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FSRoutesProject-frameworks.sh"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A897945CB08BBA19B3D0BAC3F7F2C42F /* libPods-FSRoutesProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FSRoutesProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FC8EFDB50CBF2EF171E64418BAEC20E /* FSRoutesMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSRoutesMatcher.h; path = FSRoutes/FSRoutesMatcher.h; sourceTree = "<group>"; };
+		8C85B04ED3EA2B5CA7F351E60A72F9B9 /* FSRoutesMatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSRoutesMatcher.m; path = FSRoutes/FSRoutesMatcher.m; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A897945CB08BBA19B3D0BAC3F7F2C42F /* libPods-FSRoutesProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-FSRoutesProject.a"; path = "libPods-FSRoutesProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA17085F437296DDEA7EF345092C961B /* FSRoutes.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FSRoutes.xcconfig; sourceTree = "<group>"; };
 		AB7083DB850EA09F1BF471FBBA9A1FBE /* Pods-FSRoutesProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FSRoutesProject.release.xcconfig"; sourceTree = "<group>"; };
 		AE67CF281029497DF816ECE4508459E1 /* Pods-FSRoutesProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FSRoutesProject.debug.xcconfig"; sourceTree = "<group>"; };
-		BCFA3A9EE3FC347628A3B66D2C7117B0 /* FSRoutes.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FSRoutes.xcconfig; sourceTree = "<group>"; };
 		BF09E880C2BBBAB6326EB3ADB6B76C46 /* Pods-FSRoutesProject-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FSRoutesProject-acknowledgements.plist"; sourceTree = "<group>"; };
 		D4731E3B277D49A37A19EB952ADBB121 /* Pods-FSRoutesProject-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FSRoutesProject-resources.sh"; sourceTree = "<group>"; };
-		D7CBD32DDB4A48931CB7726FE0D28E69 /* FSRoutes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FSRoutes.h; sourceTree = "<group>"; };
-		E08EF4A11F72CE2700564200 /* FSRoutesMatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSRoutesMatcher.h; sourceTree = "<group>"; };
-		E08EF4A21F72CE2700564200 /* FSRoutesMatcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSRoutesMatcher.m; sourceTree = "<group>"; };
-		E08EF4A51F72D07B00564200 /* FSRoutesMatchResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSRoutesMatchResult.h; sourceTree = "<group>"; };
-		E08EF4A61F72D07B00564200 /* FSRoutesMatchResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSRoutesMatchResult.m; sourceTree = "<group>"; };
-		EF6C20F099FC3BBB5F229A0E771D9FC7 /* FSRoutes-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FSRoutes-dummy.m"; sourceTree = "<group>"; };
+		DA6502C93CB11A17713301339FEE0A61 /* FSRoutesMatchResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FSRoutesMatchResult.h; path = FSRoutes/FSRoutesMatchResult.h; sourceTree = "<group>"; };
+		E27B786FC0B3E5AE3D8A5EAB69E9C8E7 /* FSRoutesMatchResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FSRoutesMatchResult.m; path = FSRoutes/FSRoutesMatchResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0128C23AB65B6D47E042F9119F3E3FBA /* Frameworks */ = {
+		60F2C04B6C785F68B3EE2D7EAB331863 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A92263851EFDBFC69E9C1D53C87DFC7B /* Foundation.framework in Frameworks */,
+				D5594CB1A78893F21CC39729F56DD5E6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,17 +96,27 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		64A32CE06B8104057434B9B6142ABA66 /* FSRoutes */ = {
+		39D57B5CA214B50E8A6F2B6DA1230DA7 /* FSRoutes */ = {
 			isa = PBXGroup;
 			children = (
-				D7CBD32DDB4A48931CB7726FE0D28E69 /* FSRoutes.h */,
-				591AC2C797F0A4A524370CFCF54A3195 /* FSRoutes.m */,
-				E08EF4A11F72CE2700564200 /* FSRoutesMatcher.h */,
-				E08EF4A21F72CE2700564200 /* FSRoutesMatcher.m */,
-				E08EF4A51F72D07B00564200 /* FSRoutesMatchResult.h */,
-				E08EF4A61F72D07B00564200 /* FSRoutesMatchResult.m */,
+				2BD80318AA50183F821234145788272A /* FSRoutes.h */,
+				6114763C083251300F662E7D1BE703D4 /* FSRoutes.m */,
+				6FC8EFDB50CBF2EF171E64418BAEC20E /* FSRoutesMatcher.h */,
+				8C85B04ED3EA2B5CA7F351E60A72F9B9 /* FSRoutesMatcher.m */,
+				DA6502C93CB11A17713301339FEE0A61 /* FSRoutesMatchResult.h */,
+				E27B786FC0B3E5AE3D8A5EAB69E9C8E7 /* FSRoutesMatchResult.m */,
+				F405F52F1F4357B3DF57C5108C015644 /* Support Files */,
 			);
-			path = FSRoutes;
+			name = FSRoutes;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		61CF9F71A747D8DB032788A55A794C17 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				39D57B5CA214B50E8A6F2B6DA1230DA7 /* FSRoutes */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		67CF9D4E0B19499AF16C1B7D4827BF14 /* Targets Support Files */ = {
@@ -117,44 +127,15 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		6FEAC6E13C4EFFED76ABE1B2CE60ADA2 /* FSRoutes */ = {
-			isa = PBXGroup;
-			children = (
-				64A32CE06B8104057434B9B6142ABA66 /* FSRoutes */,
-				8B95A29C941B03284D1C8C2B2AB25F27 /* Support Files */,
-			);
-			name = FSRoutes;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				A92008D37357FBAE5F6B09E77832004F /* Development Pods */,
+				61CF9F71A747D8DB032788A55A794C17 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				10BDE4920FF7F9D8B3798A453E810CA5 /* Products */,
 				67CF9D4E0B19499AF16C1B7D4827BF14 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		8B95A29C941B03284D1C8C2B2AB25F27 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				BCFA3A9EE3FC347628A3B66D2C7117B0 /* FSRoutes.xcconfig */,
-				EF6C20F099FC3BBB5F229A0E771D9FC7 /* FSRoutes-dummy.m */,
-				20D6B9A436DD14A2B3DA3C10A5E2927E /* FSRoutes-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "FSRoutesProject/Pods/Target Support Files/FSRoutes";
-			sourceTree = "<group>";
-		};
-		A92008D37357FBAE5F6B09E77832004F /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6FEAC6E13C4EFFED76ABE1B2CE60ADA2 /* FSRoutes */,
-			);
-			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -173,22 +154,50 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		F405F52F1F4357B3DF57C5108C015644 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AA17085F437296DDEA7EF345092C961B /* FSRoutes.xcconfig */,
+				49E0DDCD0A1D6A43BCB4047670D0FFD3 /* FSRoutes-dummy.m */,
+				546A14386AB66A85265A923B330789D0 /* FSRoutes-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "FSRoutesProject/Pods/Target Support Files/FSRoutes";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		F170992476F5A5E9449BAC4F1F38B816 /* Headers */ = {
+		80669E5AE3627BF492A248BE614BE5AC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E08EF4A31F72CE2700564200 /* FSRoutesMatcher.h in Headers */,
-				E08EF4A71F72D07B00564200 /* FSRoutesMatchResult.h in Headers */,
-				72E5054D30FB68EBB7D4579E169EC9DC /* FSRoutes.h in Headers */,
+				4AC6CE8C9336EDD1299E817E4E902EEE /* FSRoutes.h in Headers */,
+				0C6A450A7C33D8145AFDC82A44575B94 /* FSRoutesMatcher.h in Headers */,
+				D91153A67600CA49DA6B177EB26825D1 /* FSRoutesMatchResult.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		21D4306A00EB672252E07EEA04E8B12C /* FSRoutes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED3A65F96D704E44DDC54B797A58EAD8 /* Build configuration list for PBXNativeTarget "FSRoutes" */;
+			buildPhases = (
+				7E448A496959981C51ADF964A865005D /* Sources */,
+				60F2C04B6C785F68B3EE2D7EAB331863 /* Frameworks */,
+				80669E5AE3627BF492A248BE614BE5AC /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FSRoutes;
+			productName = FSRoutes;
+			productReference = 2C0CA330634D97556CB1B4E35B7AD163 /* libFSRoutes.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		9CC97EA076CB46311CCB83EA9CD17585 /* Pods-FSRoutesProject */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 014E598E8A5898531D9365D453B93DA9 /* Build configuration list for PBXNativeTarget "Pods-FSRoutesProject" */;
@@ -204,23 +213,6 @@
 			name = "Pods-FSRoutesProject";
 			productName = "Pods-FSRoutesProject";
 			productReference = A897945CB08BBA19B3D0BAC3F7F2C42F /* libPods-FSRoutesProject.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		B249B149187D1A6A3C85C429DF419664 /* FSRoutes */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 595C54AB9DAEA25ED3EF15B6A5B323CE /* Build configuration list for PBXNativeTarget "FSRoutes" */;
-			buildPhases = (
-				04D8C6DCF6BE517C8312909C524B8088 /* Sources */,
-				0128C23AB65B6D47E042F9119F3E3FBA /* Frameworks */,
-				F170992476F5A5E9449BAC4F1F38B816 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = FSRoutes;
-			productName = FSRoutes;
-			productReference = 2C0CA330634D97556CB1B4E35B7AD163 /* libFSRoutes.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -244,21 +236,21 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B249B149187D1A6A3C85C429DF419664 /* FSRoutes */,
+				21D4306A00EB672252E07EEA04E8B12C /* FSRoutes */,
 				9CC97EA076CB46311CCB83EA9CD17585 /* Pods-FSRoutesProject */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		04D8C6DCF6BE517C8312909C524B8088 /* Sources */ = {
+		7E448A496959981C51ADF964A865005D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E08EF4A41F72CE2700564200 /* FSRoutesMatcher.m in Sources */,
-				38CA41E228415F54C7B3FDE1BF1AC77B /* FSRoutes-dummy.m in Sources */,
-				51F0BC5CDC50C6DF9503104FB191B45F /* FSRoutes.m in Sources */,
-				E08EF4A81F72D07B00564200 /* FSRoutesMatchResult.m in Sources */,
+				8C85903D0838BD47CE9A5A02B098ED40 /* FSRoutes-dummy.m in Sources */,
+				29FE2464207E207AE510EF6EF460B4FC /* FSRoutes.m in Sources */,
+				E6588AA472D4990358C0AFC42F790033 /* FSRoutesMatcher.m in Sources */,
+				3B20899E855E7F02550F356B6AA39890 /* FSRoutesMatchResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,35 +268,12 @@
 		BE6CCC1EB38C101EB512D3C350F37A65 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FSRoutes;
-			target = B249B149187D1A6A3C85C429DF419664 /* FSRoutes */;
+			target = 21D4306A00EB672252E07EEA04E8B12C /* FSRoutes */;
 			targetProxy = 7886E7C56A95E22C560BDA6AC7A1C758 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0DF519F588FA1EAEF99390DC4BD2A480 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BCFA3A9EE3FC347628A3B66D2C7117B0 /* FSRoutes.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FSRoutes/FSRoutes-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
 		35FEDDB56DFC819B151283E6870CB95F /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AB7083DB850EA09F1BF471FBBA9A1FBE /* Pods-FSRoutesProject.release.xcconfig */;
@@ -351,7 +320,31 @@
 			};
 			name = Debug;
 		};
-		4E487F173E6C9664F4E9E26B9635D23C /* Debug */ = {
+		94A9668A970C0D2ABFA148171F7FB43A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA17085F437296DDEA7EF345092C961B /* FSRoutes.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FSRoutes/FSRoutes-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+			};
+			name = Release;
+		};
+		97803B46811A9BDB5E70FA1303AFBFFE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -395,6 +388,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
@@ -443,19 +437,19 @@
 			};
 			name = Release;
 		};
-		C9FD1C7079B05C0000DA44D946E46C84 /* Release */ = {
+		C253094C81CAC75BC26462922FF4D060 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BCFA3A9EE3FC347628A3B66D2C7117B0 /* FSRoutes.xcconfig */;
+			baseConfigurationReference = AA17085F437296DDEA7EF345092C961B /* FSRoutes.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/FSRoutes/FSRoutes-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -463,8 +457,9 @@
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -481,17 +476,17 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4E487F173E6C9664F4E9E26B9635D23C /* Debug */,
+				97803B46811A9BDB5E70FA1303AFBFFE /* Debug */,
 				BDD0139D6EB93FA375F887ABD62DAB2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		595C54AB9DAEA25ED3EF15B6A5B323CE /* Build configuration list for PBXNativeTarget "FSRoutes" */ = {
+		ED3A65F96D704E44DDC54B797A58EAD8 /* Build configuration list for PBXNativeTarget "FSRoutes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0DF519F588FA1EAEF99390DC4BD2A480 /* Debug */,
-				C9FD1C7079B05C0000DA44D946E46C84 /* Release */,
+				C253094C81CAC75BC26462922FF4D060 /* Debug */,
+				94A9668A970C0D2ABFA148171F7FB43A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
