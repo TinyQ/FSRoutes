@@ -1,2 +1,8 @@
-target 'FSRoutesProject'
-pod 'FSRoutes', :path => '../'
+target 'FSRoutesProject' do
+    pod 'FSRoutes', :path => '../'
+end
+
+target 'FSRoutesProjectTests' do
+    pod 'Expecta'
+    pod 'FSRoutes', :path => '../'
+end

@@ -25,6 +25,9 @@ static NSString * const FSRURLParameterPattern        = @"([^/]+)";
 
 + (instancetype)matcherWithRule:(NSString *)rule {
     NSParameterAssert(rule);
+    if ([rule isEqualToString:@""]) {
+        return nil;
+    }
     return [[FSRoutesMatcher alloc] initWithRule:rule];;
 }
 
@@ -34,18 +37,18 @@ static NSString * const FSRURLParameterPattern        = @"([^/]+)";
         _rule = rule;
         _schemeAndExpression = [[self class] separatedSchemeAndExpressFromRule:rule];
         _routeParameterKeys = [[self class] routeParametersFromeRule:rule];
-        _routePattern = [[self class] routePatternFromRule:[self expression]];
+        _routePattern = [[self class] routePatternFromRule:[self ruleExpression]];
     }
     return self;
 }
 
 - (FSRoutesMatchResult *)match:(NSURL *)url {
     NSParameterAssert(url);
-    NSString *url_scheme = url.scheme;
-    if (!self.scheme) {
+    NSString *urlScheme = url.scheme;
+    if (![self ruleScheme]) {
         return nil;
     }
-    if (![self.scheme isEqualToString:url_scheme]) {
+    if (![[self ruleScheme] isEqualToString:urlScheme]) {
         return nil;
     }
     FSRoutesMatchResult *matchResult = [[FSRoutesMatchResult alloc] init];
@@ -74,12 +77,12 @@ static NSString * const FSRURLParameterPattern        = @"([^/]+)";
 
 #pragma mark - private
 
-- (NSString *)scheme {
+- (NSString *)ruleScheme {
     NSArray *array =  self.schemeAndExpression;
     return array.count > 1 ? [array firstObject] : nil;
 }
 
-- (NSString *)expression {
+- (NSString *)ruleExpression {
     NSArray *array =  self.schemeAndExpression;
     return array.count > 1 ? [array lastObject] : nil;
 }

@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param url The url to be compared with the rule.
  @return A FSRoutesMatchResult instance if the URL matched the route, otherwise nil.
  */
-- (FSRoutesMatchResult *)match:(NSURL *)url;
+- (nullable FSRoutesMatchResult *)match:(NSURL *)url;
 
 @end
 
