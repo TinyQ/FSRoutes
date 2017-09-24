@@ -23,14 +23,6 @@ static NSString * const FSRURLParameterPattern        = @"([^/]+)";
 
 @implementation FSRoutesMatcher
 
-+ (instancetype)matcherWithRule:(NSString *)rule {
-    NSParameterAssert(rule);
-    if ([rule isEqualToString:@""]) {
-        return nil;
-    }
-    return [[FSRoutesMatcher alloc] initWithRule:rule];;
-}
-
 - (instancetype)initWithRule:(NSString *)rule {
     self = [super init];
     if (self) {
@@ -40,6 +32,16 @@ static NSString * const FSRURLParameterPattern        = @"([^/]+)";
         _routePattern = [[self class] routePatternFromRule:[self ruleExpression]];
     }
     return self;
+}
+
+#pragma mark - public
+
++ (instancetype)matcherWithRule:(NSString *)rule {
+    NSParameterAssert(rule);
+    if ([rule isEqualToString:@""]) {
+        return nil;
+    }
+    return [[FSRoutesMatcher alloc] initWithRule:rule];;
 }
 
 - (FSRoutesMatchResult *)match:(NSURL *)url {
