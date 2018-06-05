@@ -2,6 +2,8 @@ language: objective-c
 osx_image: xcode9.3
 podfile: FSRoutesProject/Podfile
 script:
-  - xcodebuild -workspace FSRoutesProject/FSRoutesProject.xcworkspace -scheme FSRoutesProject -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  xctool -workspace FSRoutesProject/FSRoutesProject.xcworkspace -scheme FSRoutesProjectTests run-tests -test-sdk iphonesimulator11.4
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+
+  
