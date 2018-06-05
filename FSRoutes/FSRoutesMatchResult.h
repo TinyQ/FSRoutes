@@ -10,6 +10,6 @@
 @interface FSRoutesMatchResult : NSObject
 
 @property (nonatomic) BOOL match;
-@property (nonatomic) NSDictionary<NSString *,NSString *> *routeParameter;
+@property (nonatomic) NSDictionary<NSString *,NSString *> *parameter;
 
 @end

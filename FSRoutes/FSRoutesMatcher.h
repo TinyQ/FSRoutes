@@ -15,18 +15,33 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Initializes a route matcher.
 
- @param rule Match rule string
+ @param rule Match rule string.
  @return An route matcher instance.
  */
 + (instancetype)matcherWithRule:(NSString *)rule;
 
 /**
- Matches a URL against the route and returns a result object
+ Matches a URL against the route and returns a result object.
 
  @param url The url to be compared with the rule.
  @return A FSRoutesMatchResult instance if the URL matched the route, otherwise nil.
  */
 - (nullable FSRoutesMatchResult *)match:(NSURL *)url;
+
+/**
+ Rule scheme string.
+    like rule is "abc://def" return "abc"
+ 
+ @return A scheme string.
+ */
+- (nullable NSString *)ruleScheme;
+
+/**
+ Rule expression string, like rule is "abc://def" return "def" or "/def/abc" return "/def/abc"
+ 
+ @return A scheme string.
+ */
+- (nullable NSString *)ruleExpression;
 
 @end
 

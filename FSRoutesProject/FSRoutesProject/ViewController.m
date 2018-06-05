@@ -18,13 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    NSString *rule = @"http://www.baidu.com/aaa/:param_0/bbb/:param_1/ccc/:param_2s";
-    NSURL *url = [NSURL URLWithString:@"http://www.baidu.com/aaa/123/bbb/321/ccc/444"];
-    
-    FSRoutesMatcher *matcher = [FSRoutesMatcher matcherWithRule:rule];
-    FSRoutesMatchResult *result = [matcher match:url];
-    NSLog(@"%@",result);
 }
 
 - (void)didReceiveMemoryWarning {

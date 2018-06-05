@@ -46,13 +46,6 @@ static NSString * const FSRURLParameterPattern        = @"([^/]+)";
 
 - (FSRoutesMatchResult *)match:(NSURL *)url {
     NSParameterAssert(url);
-    NSString *urlScheme = url.scheme;
-    if (![self ruleScheme]) {
-        return nil;
-    }
-    if (![[self ruleScheme] isEqualToString:urlScheme]) {
-        return nil;
-    }
     FSRoutesMatchResult *matchResult = [[FSRoutesMatchResult alloc] init];
     NSString *matchString = [[self class] matchStringFromURL:url];
     if (self.regularExpression == nil) {
@@ -73,20 +66,18 @@ static NSString * const FSRURLParameterPattern        = @"([^/]+)";
             routeParameters[parameterName]  = parameterValue;
         }
     }
-    matchResult.routeParameter = routeParameters;
+    matchResult.parameter = routeParameters;
     return matchResult;
 }
 
-#pragma mark - private
-
 - (NSString *)ruleScheme {
-    NSArray *array =  self.schemeAndExpression;
+    NSArray *array = self.schemeAndExpression;
     return array.count > 1 ? [array firstObject] : nil;
 }
 
 - (NSString *)ruleExpression {
-    NSArray *array =  self.schemeAndExpression;
-    return array.count > 1 ? [array lastObject] : nil;
+    NSArray *array = self.schemeAndExpression;
+    return array.count > 0 ? [array lastObject] : nil;
 }
 
 #pragma mark - helper
@@ -96,15 +87,13 @@ static NSString * const FSRURLParameterPattern        = @"([^/]+)";
 }
 
 + (NSArray<NSString *> *)separatedSchemeAndExpressFromRule:(NSString *)rule {
+    NSParameterAssert(rule);
     NSString *str = [rule copy];
-    NSArray *parts = [str componentsSeparatedByString:@"://"];
-    if (parts.count != 2) {
-        return nil;
-    }
-    return parts;
+    return [str componentsSeparatedByString:@"://"];
 }
 
 + (NSArray<NSString *> *)routeParametersTokensFromeRule:(NSString *)rule {
+    NSParameterAssert(rule);
     NSString *str = [rule copy];
     NSInteger length = rule.length;
     NSRegularExpression *componentRegex = [NSRegularExpression regularExpressionWithPattern:FSRNamedGroupComponentPattern
@@ -122,6 +111,7 @@ static NSString * const FSRURLParameterPattern        = @"([^/]+)";
 }
 
 + (NSArray<NSString *> *)routeParametersFromeRule:(NSString *)rule {
+    NSParameterAssert(rule);
     NSString *str = [rule copy];
     NSMutableArray *groupNames = [NSMutableArray array];
     
@@ -146,6 +136,7 @@ static NSString * const FSRURLParameterPattern        = @"([^/]+)";
 }
 
 + (NSString *)routePatternFromRule:(NSString *)rule {
+    NSParameterAssert(rule);
     NSString *modifiedStr = [rule copy];
     NSArray *namedGroupExpressions = [self routeParametersTokensFromeRule:modifiedStr];
     NSRegularExpression *parameterRegex = [NSRegularExpression regularExpressionWithPattern:FSRRouteParameterPattern

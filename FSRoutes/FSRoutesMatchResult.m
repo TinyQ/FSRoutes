@@ -10,7 +10,7 @@
 @implementation FSRoutesMatchResult
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"isMatch : %@ routeParameter : %@", @(self.match),self.routeParameter];
+    return [NSString stringWithFormat:@"isMatch : %@ parameter : %@", @(self.match),self.parameter];
 }
 
 @end
