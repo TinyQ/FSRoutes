@@ -1,5 +1,6 @@
-# FSRoutes
-URL routing library for iOS with a simple block-based API
+[![Build Status](https://travis-ci.org/TinyQ/FSRoutes.svg?branch=master)](https://travis-ci.org/TinyQ/FSRoutes)
+
+FSRoutes is URL routing library for iOS with a simple block-based API
 
 ## WIP
 
