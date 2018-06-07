@@ -59,13 +59,38 @@ NSURL *URLWithPath(NSString *path) {
     expect([matcher ruleExpression]).to.equal(@"/def/abc");
 }
 
-- (void)test_url_matches_a_route {
-    FSRoutesMatcher *matcher = [FSRoutesMatcher matcherWithRule:@"/test/path"];
-    NSURL *url = URLWithPath(@"/test/path");
+- (void)test_ruleParameter_0 {
+    FSRoutesMatcher *matcher = [FSRoutesMatcher matcherWithRule:@"/def"];
+    expect(matcher).notTo.beNil();
     
+    NSURL *url = URLWithPath(@"/def");
     FSRoutesMatchResult *result = [matcher match:url];
     expect(result).notTo.beNil();
+    expect(result.match).to.equal(YES);
     expect(result.parameter).to.equal(@{});
+}
+    
+- (void)test_ruleParameter_1 {
+    FSRoutesMatcher *matcher = [FSRoutesMatcher matcherWithRule:@"/def/:id"];
+    expect(matcher).notTo.beNil();
+
+    NSURL *url = URLWithPath(@"/def/123");
+    FSRoutesMatchResult *result = [matcher match:url];
+    expect(result).notTo.beNil();
+    expect(result.match).to.equal(YES);
+    expect(result.parameter[@"id"]).to.equal(@"123");
+}
+    
+- (void)test_ruleParameter_2 {
+    FSRoutesMatcher *matcher = [FSRoutesMatcher matcherWithRule:@"/def/:id/:name"];
+    expect(matcher).notTo.beNil();
+    
+    NSURL *url = URLWithPath(@"/def/123/456");
+    FSRoutesMatchResult *result = [matcher match:url];
+    expect(result).notTo.beNil();
+    expect(result.match).to.equal(YES);
+    expect(result.parameter[@"id"]).to.equal(@"123");
+    expect(result.parameter[@"name"]).to.equal(@"456");
 }
 
 @end
