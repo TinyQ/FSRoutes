@@ -59,20 +59,13 @@ NSURL *URLWithPath(NSString *path) {
     expect([matcher ruleExpression]).to.equal(@"/def/abc");
 }
 
-- (void)test_URL_matches_a_route {
+- (void)test_url_matches_a_route {
     FSRoutesMatcher *matcher = [FSRoutesMatcher matcherWithRule:@"/test/path"];
     NSURL *url = URLWithPath(@"/test/path");
     
     FSRoutesMatchResult *result = [matcher match:url];
     expect(result).notTo.beNil();
     expect(result.parameter).to.equal(@{});
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
 }
 
 @end

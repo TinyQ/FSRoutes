@@ -15,7 +15,6 @@
 		E0196F981F70381E002C12A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0196F971F70381E002C12A5 /* Assets.xcassets */; };
 		E0196F9B1F70381E002C12A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0196F991F70381E002C12A5 /* LaunchScreen.storyboard */; };
 		E0196F9E1F70381E002C12A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0196F9D1F70381E002C12A5 /* main.m */; };
-		E0196FA81F70381E002C12A5 /* FSRoutesProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0196FA71F70381E002C12A5 /* FSRoutesProjectTests.m */; };
 		E0196FB31F70381E002C12A5 /* FSRoutesProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0196FB21F70381E002C12A5 /* FSRoutesProjectUITests.m */; };
 		E0AB752A1F76C38E00CB9E96 /* FSRoutesMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AB75291F76C38E00CB9E96 /* FSRoutesMatcherTests.m */; };
 /* End PBXBuildFile section */
@@ -53,7 +52,6 @@
 		E0196F9C1F70381E002C12A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0196F9D1F70381E002C12A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E0196FA31F70381E002C12A5 /* FSRoutesProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FSRoutesProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0196FA71F70381E002C12A5 /* FSRoutesProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSRoutesProjectTests.m; sourceTree = "<group>"; };
 		E0196FA91F70381E002C12A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0196FAE1F70381E002C12A5 /* FSRoutesProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FSRoutesProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0196FB21F70381E002C12A5 /* FSRoutesProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSRoutesProjectUITests.m; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 		E0196FA61F70381E002C12A5 /* FSRoutesProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				E0196FA71F70381E002C12A5 /* FSRoutesProjectTests.m */,
 				E0AB75291F76C38E00CB9E96 /* FSRoutesMatcherTests.m */,
 				E0196FA91F70381E002C12A5 /* Info.plist */,
 			);
@@ -351,7 +348,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0196FA81F70381E002C12A5 /* FSRoutesProjectTests.m in Sources */,
 				E0AB752A1F76C38E00CB9E96 /* FSRoutesMatcherTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
