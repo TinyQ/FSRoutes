@@ -6,6 +6,7 @@
 //
 
 #import "FSRoutesMatcher.h"
+#import "FSRoutesMatchResult.h"
 
 static NSString * const FSRNamedGroupComponentPattern = @":[a-zA-Z0-9-_][^/]+";
 static NSString * const FSRRouteParameterPattern      = @":[a-zA-Z0-9-_]+";

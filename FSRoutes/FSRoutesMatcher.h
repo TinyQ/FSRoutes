@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FSRoutesMatchResult.h"
+@class FSRoutesMatchResult;
 
 NS_ASSUME_NONNULL_BEGIN
 

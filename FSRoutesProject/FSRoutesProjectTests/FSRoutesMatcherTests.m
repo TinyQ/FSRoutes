@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import <Expecta/Expecta.h>
-#import <FSRoutes/FSRoutesMatcher.h>
+#import <FSRoutes/FSRoutes.h>
 
 NSURL *URLWithPath(NSString *path) {
     return [NSURL URLWithString:[NSString stringWithFormat:@"http://qfu.space%@", path]];

@@ -7,14 +7,12 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
+//! Project version number for FSRoutes.
+FOUNDATION_EXPORT double FSRoutesVersionNumber;
 
-@interface FSRoutes : NSObject
+//! Project version string for FSRoutes.
+FOUNDATION_EXPORT const unsigned char FSRoutesVersionString[];
 
-- (instancetype)init;
-- (BOOL)routeURL:(NSURL *)URL;
-- (BOOL)routeURL:(NSURL *)URL parameters:(nullable NSDictionary<NSString *, id> *)parameters;
+#import <FSRoutes/FSRoutesMatcher.h>
+#import <FSRoutes/FSRoutesMatchResult.h>
 
-@end
-
-NS_ASSUME_NONNULL_END
