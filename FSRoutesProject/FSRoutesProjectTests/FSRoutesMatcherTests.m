@@ -159,6 +159,17 @@ NSURL *URLWithPath(NSString *path) {
     expect(result.match).to.equal(YES);
     expect(result.parameter).to.equal(@{});
 }
+
+- (void)test_when_a_url_not_matches_a_route {
+    FSRoutesMatcher *matcher = [FSRoutesMatcher matcherWithRule:@"/def"];
+    expect(matcher).notTo.beNil();
+    
+    NSURL *url = URLWithPath(@"/abc");
+    FSRoutesMatchResult *result = [matcher match:url];
+    expect(result).notTo.beNil();
+    expect(result.match).to.equal(NO);
+    expect(result.parameter).to.equal(nil);
+}
     
 - (void)test_when_a_url_matches_a_route_with_1_parameter {
     FSRoutesMatcher *matcher = [FSRoutesMatcher matcherWithRule:@"/def/:id"];
@@ -169,6 +180,17 @@ NSURL *URLWithPath(NSString *path) {
     expect(result).notTo.beNil();
     expect(result.match).to.equal(YES);
     expect(result.parameter[@"id"]).to.equal(@"123");
+}
+
+- (void)test_when_a_url_not_matches_a_route_with_1_parameter {
+    FSRoutesMatcher *matcher = [FSRoutesMatcher matcherWithRule:@"/def/:id"];
+    expect(matcher).notTo.beNil();
+    
+    NSURL *url = URLWithPath(@"/abc/123");
+    FSRoutesMatchResult *result = [matcher match:url];
+    expect(result).notTo.beNil();
+    expect(result.match).to.equal(NO);
+    expect(result.parameter).to.equal(nil);
 }
     
 - (void)test_when_a_url_matches_a_route_with_2_parameter_style_1 {
@@ -205,6 +227,19 @@ NSURL *URLWithPath(NSString *path) {
     expect(result.match).to.equal(YES);
     expect(result.parameter[@"id"]).to.equal(@"123");
     expect(result.parameter[@"name"]).to.equal(@"qfu");
+}
+
+- (void)test_wildcard_route {
+    FSRoutesMatcher *matcher = [FSRoutesMatcher matcherWithRule:@".*"];
+    NSURL *url = URLWithPath(@"/table/book/abc123/1418931000");
+    NSURL *url2 = URLWithPath(@"/abc123");
+    FSRoutesMatchResult *result = [matcher match:url];
+    expect(result).notTo.beNil();
+    expect(result.parameter).to.equal(@{});
+    
+    FSRoutesMatchResult *result2 = [matcher match:url2];
+    expect(result2).notTo.beNil();
+    expect(result2.parameter).to.equal(@{});
 }
 
 @end
