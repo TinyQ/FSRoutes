@@ -22,26 +22,30 @@ NSURL *URLWithPath(NSString *path) {
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
-- (void)test_Initialization {
+#pragma mark - Initialization
+
+- (void)test_initialization {
+    // creates an instance with a route
     FSRoutesMatcher *matcher = nil;
     matcher = [FSRoutesMatcher matcherWithRule:@"xxx://test/:parm0"];
-    NSLog(@"%@",matcher);
     expect(matcher).notTo.beNil();
     
+    // does not create an instance with no route
     matcher = [FSRoutesMatcher matcherWithRule:@""];
-    NSLog(@"%@",matcher);
+    expect(matcher).to.beNil();
+    
+    // does not create an instance with :// prefix rule
+    matcher = [FSRoutesMatcher matcherWithRule:@"://def/abc"];
     expect(matcher).to.beNil();
 }
 
-- (void)test_ruleScheme {
+- (void)test_rule_scheme {
     FSRoutesMatcher *matcher = nil;
     matcher = [FSRoutesMatcher matcherWithRule:@"abc://def"];
     expect([matcher ruleScheme]).to.equal(@"abc");
@@ -50,7 +54,7 @@ NSURL *URLWithPath(NSString *path) {
     expect([matcher ruleScheme]).to.beNil();
 }
 
-- (void)test_ruleExpression {
+- (void)test_rule_expression {
     FSRoutesMatcher *matcher = nil;
     matcher = [FSRoutesMatcher matcherWithRule:@"abc://def"];
     expect([matcher ruleExpression]).to.equal(@"def");
