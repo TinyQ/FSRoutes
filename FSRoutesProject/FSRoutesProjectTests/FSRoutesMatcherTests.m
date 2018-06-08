@@ -43,14 +43,31 @@ NSURL *URLWithPath(NSString *path) {
     // does not create an instance with :// prefix rule
     matcher = [FSRoutesMatcher matcherWithRule:@"://def/abc"];
     expect(matcher).to.beNil();
+    
+    // does not create an instance with // prefix rule
+    matcher = [FSRoutesMatcher matcherWithRule:@"//def/abc"];
+    expect(matcher).to.beNil();
 }
 
-- (void)test_rule_scheme {
+- (void)test_rule_scheme_exist {
     FSRoutesMatcher *matcher = nil;
     matcher = [FSRoutesMatcher matcherWithRule:@"abc://def"];
     expect([matcher ruleScheme]).to.equal(@"abc");
     
+    matcher = [FSRoutesMatcher matcherWithRule:@"https://def"];
+    expect([matcher ruleScheme]).to.equal(@"https");
+}
+
+- (void)test_rule_scheme_not_exist {
+    FSRoutesMatcher *matcher = nil;
+    
+    matcher = [FSRoutesMatcher matcherWithRule:@"def/abc"];
+    expect([matcher ruleScheme]).to.beNil();
+    
     matcher = [FSRoutesMatcher matcherWithRule:@"/def/abc"];
+    expect([matcher ruleScheme]).to.beNil();
+    
+    matcher = [FSRoutesMatcher matcherWithRule:@"//def/abc"];
     expect([matcher ruleScheme]).to.beNil();
 }
 

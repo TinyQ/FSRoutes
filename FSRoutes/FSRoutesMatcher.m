@@ -42,6 +42,9 @@ static NSString * const FSRURLParameterPattern        = @"([^/]+)";
     if ([rule isEqualToString:@""]) {
         return nil;
     }
+    if ([rule hasPrefix:@"//"]) {
+        return nil;
+    }
     if ([rule hasPrefix:@"://"]) {
         return nil;
     }
