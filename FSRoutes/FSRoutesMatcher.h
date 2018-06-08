@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Initializes a route matcher.
-
+ 
  @param rule Match rule string.
  @return An route matcher instance.
  */
@@ -29,15 +29,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (nullable FSRoutesMatchResult *)match:(NSURL *)url;
 
 /**
- Rule scheme string.
-    like rule is "abc://def" return "abc"
+ Get rule scheme string. like rule is "abc://def" return "abc"
  
  @return A scheme string.
  */
 - (nullable NSString *)ruleScheme;
 
 /**
- Rule expression string, like rule is "abc://def" return "def" or "/def/abc" return "/def/abc"
+ Get rule expression string. like rule is "abc://def" return "def" or "/def/abc" return "/def/abc"
  
  @return A scheme string.
  */
