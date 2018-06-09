@@ -54,6 +54,10 @@ static NSString * const FSRURLParameterPattern        = @"([^/]+)";
 - (FSRoutesMatchResult *)match:(NSURL *)url {
     NSParameterAssert(url);
     FSRoutesMatchResult *matchResult = [[FSRoutesMatchResult alloc] init];
+    NSString *ruleScheme = self.ruleScheme;
+    if (ruleScheme && ![ruleScheme isEqualToString:url.scheme]) {
+        return matchResult;
+    }
     NSString *matchString = [[self class] matchStringFromURL:url];
     if (self.regularExpression == nil) {
         self.regularExpression = [[NSRegularExpression alloc] initWithPattern:self.routePattern options:0 error:nil];
