@@ -10,8 +10,10 @@ target 'FSRoutesProjectTests' do
 end
 
 post_install do |installer|
+
     installer.pods_project.targets.each_with_index do |target, idx|
         target.build_configurations.each do |config|
+            puts target.name
             config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '9.0'
         end
     end
