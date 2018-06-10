@@ -48,7 +48,7 @@ static NSString * const FSRURLParameterPattern        = @"([^/]+)";
     if ([rule hasPrefix:@"://"]) {
         return nil;
     }
-    return [[FSRoutesMatcher alloc] initWithRule:rule];;
+    return [[FSRoutesMatcher alloc] initWithRule:rule];
 }
 
 - (FSRoutesMatchResult *)match:(NSURL *)url {
