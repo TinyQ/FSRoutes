@@ -16,7 +16,7 @@ end
 workspace = "FSRoutesProject/FSRoutesProject.xcworkspace"
 scheme = "FSRoutesProject"
 sdk = `xcodebuild -showsdks | grep -o 'iphonesimulator*.*'`
-destination = "'platform=iOS Simulator,name=iPhone 7,OS=10.0'"
+destination = "'platform=iOS Simulator,name=iPhone X,OS=11.3'"
 
 xcodebuild_test_command = <<-EOF
 xcodebuild\
