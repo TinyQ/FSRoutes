@@ -5,8 +5,8 @@
 //  Created by qfu on 2018/6/11.
 //
 
-#import "FSRouterItem.h"
+#import "FSRouteItem.h"
 
-@implementation FSRouterItem
+@implementation FSRouteItem
 
 @end

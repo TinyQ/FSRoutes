@@ -6,10 +6,18 @@
 //
 
 #import <Foundation/Foundation.h>
+@class FSRouteItem;
+@class FSRouteHandle;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FSRouter : NSObject
+
+- (void)addRoute:(FSRouteItem *)route handler:(FSRouteHandle *)handle;
+
+- (BOOL)canRoute:(NSURL *)URL;
+
+- (BOOL)routeURL:(NSURL *)URL;
 
 @end
 

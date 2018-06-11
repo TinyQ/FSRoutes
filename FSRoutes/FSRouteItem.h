@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FSRouterItem : NSObject
+@interface FSRouteItem : NSObject
+
+@property (nonatomic, copy) NSString *pattern;
 
 @end
