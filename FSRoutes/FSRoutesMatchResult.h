@@ -7,9 +7,13 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface FSRoutesMatchResult : NSObject
 
 @property (nonatomic) BOOL match;
 @property (nonatomic) NSDictionary<NSString *,NSString *> *parameter;
 
 @end
+
+NS_ASSUME_NONNULL_END
