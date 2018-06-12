@@ -9,11 +9,13 @@
 @class FSRouteItem;
 @class FSRouteHandle;
 
+typedef BOOL (^FSRouteHandler)(FSRouteHandle *handle);
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FSRouter : NSObject
 
-- (void)addRoute:(FSRouteItem *)route handler:(FSRouteHandle *)handle;
+- (void)addRoute:(FSRouteItem *)route handler:(FSRouteHandler)handler;
 
 - (BOOL)canRoute:(NSURL *)URL;
 

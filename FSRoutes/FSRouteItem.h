@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) NSArray<NSURL *> *testURLs;
 
-@property (nonatomic) NSArray<NSString *> *patterns;
+@property (nonatomic) NSArray<NSString *> *rules;
 
 @end
 
