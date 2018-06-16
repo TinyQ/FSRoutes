@@ -5,6 +5,8 @@
 //  Created by qfu on 2018/6/12.
 //
 
+//  Copy from deeplink NSString+DPLQuery.h|m
+
 #import "NSString+FSRouteParameters.h"
 
 @implementation NSString (FSRouteParameters)
@@ -20,7 +22,6 @@
     return [query copy];
 }
 
-
 - (NSDictionary *)fs_parametersFromQueryString {
     NSArray *params = [self componentsSeparatedByString:@"&"];
     NSMutableDictionary *paramsDict = [NSMutableDictionary dictionaryWithCapacity:[params count]];
@@ -30,7 +31,9 @@
             // e.g. ?key=value
             NSString *key   = [pairs[0] fs_stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
             NSString *value = [pairs[1] fs_stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-            paramsDict[key] = value;
+            if (key && value) {
+                paramsDict[key] = value;
+            }
         } else if (pairs.count == 1) {
             // e.g. ?key. key may be nil in sometimes
             NSString *key = [[pairs firstObject] fs_stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -42,14 +45,12 @@
     return [paramsDict copy];
 }
 
-
 #pragma mark - URL Encoding/Decoding
 
 - (NSString *)fs_stringByAddingPercentEscapesUsingEncoding:(NSStringEncoding)encoding {
     NSCharacterSet *allowedCharactersSet = [NSCharacterSet characterSetWithCharactersInString:@"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_.~"];
     return [self stringByAddingPercentEncodingWithAllowedCharacters:allowedCharactersSet];
 }
-
 
 - (NSString *)fs_stringByReplacingPercentEscapesUsingEncoding:(NSStringEncoding)encoding {
     return [self stringByRemovingPercentEncoding];

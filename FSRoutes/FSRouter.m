@@ -85,7 +85,9 @@
     return didRoute;
 }
 
-- (BOOL)executeURL:(NSURL *)URL rule:(NSString *)rule result:(FSRoutesMatchResult *)result {
+- (BOOL)executeURL:(NSURL *)URL
+              rule:(NSString *)rule
+            result:(FSRoutesMatchResult *)result {
     NSParameterAssert(URL);
     NSParameterAssert(rule);
     NSParameterAssert(result);
