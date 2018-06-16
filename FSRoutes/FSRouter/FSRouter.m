@@ -97,9 +97,9 @@
         return NO;
     }
     
-    FSRouteHandle *handle = [[FSRouteHandle alloc] initWithURL:URL
-                                                          rule:rule
-                                               routeParameters:result.parameter];
+    FSRouteHandle *handle = [FSRouteHandle handleWithURL:URL
+                                                    rule:rule
+                                         routeParameters:result.parameter];
     return handler(handle);
 }
 

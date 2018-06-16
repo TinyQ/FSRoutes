@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface FSRouteHandle : NSObject
 
 /**
@@ -22,15 +24,20 @@
 /**
  The query parameters parsed from the incoming URL.
  */
-@property (nonatomic, copy, readonly) NSDictionary *queryParameters;
+@property (nonatomic, copy, readonly, nullable) NSDictionary *queryParameters;
 
 /**
  A dictionary of values keyed by their parameterized route component matched in the URL path.
  */
-@property (nonatomic, copy, readonly) NSDictionary *routeParameters;
+@property (nonatomic, copy, readonly, nullable) NSDictionary *routeParameters;
 
-- (instancetype)initWithURL:(NSURL*)URL
-                       rule:(NSString *)rule
-            routeParameters:(NSDictionary *)routeParameters;
++ (instancetype)handleWithURL:(NSURL *)URL
+                         rule:(NSString *)rule
+              routeParameters:(nullable NSDictionary *)routeParameters;
+
+- (instancetype) init __attribute__((unavailable("init not available, call static instead")));
++ (instancetype) new __attribute__((unavailable("new not available, call static instead")));
 
 @end
+
+NS_ASSUME_NONNULL_END
