@@ -18,8 +18,7 @@ FSRoutes is URL routing library for iOS with a simple block-based API
 
 ### Cocoapods
 
-[CocoaPods][] is a dependency manager for Cocoa projects. To install
-SQLite.swift with CocoaPods:
+[CocoaPods][] is a dependency manager for Cocoa projects.
 
 // TODO : Like https://github.com/stephencelis/SQLite.swift/edit/master/README.md
 
