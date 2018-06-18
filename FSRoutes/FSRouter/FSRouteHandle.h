@@ -31,6 +31,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, copy, readonly, nullable) NSDictionary *routeParameters;
 
+/**
+ Create a FSRouteHandle instance.
+ */
 + (instancetype)handleWithURL:(NSURL *)URL
                          rule:(NSString *)rule
               routeParameters:(nullable NSDictionary *)routeParameters;
