@@ -66,7 +66,7 @@
     
     for (NSString *rule in [self.rules copy]) {
         FSRoutesMatcher *matcher = [FSRoutesMatcher matcherWithRule:rule];
-        didRoute = [matcher match:URL];
+        matchResult = [matcher match:URL];
         // if not match, we're continue.
         if(!matchResult.match) {
             continue;

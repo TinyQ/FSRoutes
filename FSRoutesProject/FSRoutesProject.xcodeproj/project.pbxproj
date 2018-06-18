@@ -19,6 +19,7 @@
 		E09255D820CD6F49003275A6 /* FSRoutesMatchResultTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E09255D720CD6F49003275A6 /* FSRoutesMatchResultTests.m */; };
 		E0A7EC8E20D57E47003FF8CE /* FSRouteHandleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A7EC8D20D57E47003FF8CE /* FSRouteHandleTests.m */; };
 		E0AB752A1F76C38E00CB9E96 /* FSRoutesMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AB75291F76C38E00CB9E96 /* FSRoutesMatcherTests.m */; };
+		E0BB568420D780F7009CA6C8 /* FSRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BB568320D780F7009CA6C8 /* FSRouterTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		E09255D720CD6F49003275A6 /* FSRoutesMatchResultTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSRoutesMatchResultTests.m; sourceTree = "<group>"; };
 		E0A7EC8D20D57E47003FF8CE /* FSRouteHandleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSRouteHandleTests.m; sourceTree = "<group>"; };
 		E0AB75291F76C38E00CB9E96 /* FSRoutesMatcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSRoutesMatcherTests.m; sourceTree = "<group>"; };
+		E0BB568320D780F7009CA6C8 /* FSRouterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSRouterTests.m; sourceTree = "<group>"; };
 		EAF8535B81DCEC104BADA2F6 /* Pods-FSRoutesProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSRoutesProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FSRoutesProjectTests/Pods-FSRoutesProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		EC85F37783B757780E4E6AAD /* libPods-FSRoutesProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FSRoutesProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -133,6 +135,7 @@
 		E0196FA61F70381E002C12A5 /* FSRoutesProjectTests */ = {
 			isa = PBXGroup;
 			children = (
+				E0BB568320D780F7009CA6C8 /* FSRouterTests.m */,
 				E0A7EC8D20D57E47003FF8CE /* FSRouteHandleTests.m */,
 				E0AB75291F76C38E00CB9E96 /* FSRoutesMatcherTests.m */,
 				E09255D720CD6F49003275A6 /* FSRoutesMatchResultTests.m */,
@@ -357,6 +360,7 @@
 				E0AB752A1F76C38E00CB9E96 /* FSRoutesMatcherTests.m in Sources */,
 				E0A7EC8E20D57E47003FF8CE /* FSRouteHandleTests.m in Sources */,
 				E09255D820CD6F49003275A6 /* FSRoutesMatchResultTests.m in Sources */,
+				E0BB568420D780F7009CA6C8 /* FSRouterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

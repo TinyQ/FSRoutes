@@ -15,6 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FSRouter : NSObject
 
+@property (nonatomic, readonly) NSMutableOrderedSet<FSRouteItem *> *routes;
+@property (nonatomic, readonly) NSMutableOrderedSet<NSString *> *rules;
+@property (nonatomic, readonly) NSMutableDictionary<NSString *, id> *handlers;
+
 - (void)addRoute:(FSRouteItem *)route handler:(FSRouteHandler)handler;
 
 - (BOOL)canRoute:(NSURL *)URL;
