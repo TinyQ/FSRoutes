@@ -6,7 +6,11 @@
 //
 
 #import <Foundation/Foundation.h>
+@class FSRouter;
 
 @interface FSRouterManager : NSObject
+
+@property (nonatomic, readonly) FSRouter *router;
+@property (nonatomic, readonly, class) FSRouterManager *shared;
 
 @end
