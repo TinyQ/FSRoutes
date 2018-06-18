@@ -11,11 +11,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FSRouteItem : NSObject
 
-@property (nonatomic) NSString *introdution;
+@property (nonatomic, copy) NSString *introdution;
 
-@property (nonatomic) NSArray<NSString *> *testURLs;
+@property (nonatomic, copy) NSArray<NSString *> *testURLs;
 
-@property (nonatomic) NSArray<NSString *> *rules;
+@property (nonatomic, copy) NSArray<NSString *> *rules;
 
 @end
 

@@ -77,7 +77,9 @@ static NSString * const FSRURLParameterPattern        = @"([^/]+)";
             routeParameters[parameterName]  = parameterValue;
         }
     }
-    matchResult.parameter = routeParameters;
+    if (routeParameters.count > 0) {
+        matchResult.parameter = routeParameters;
+    }
     return matchResult;
 }
 

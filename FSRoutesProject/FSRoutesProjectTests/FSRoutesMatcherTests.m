@@ -91,7 +91,7 @@ NSURL *URLWithPath(NSString *path) {
     FSRoutesMatchResult *result = [matcher match:url];
     expect(result).notTo.beNil();
     expect(result.match).to.equal(YES);
-    expect(result.parameter).to.equal(@{});
+    expect(result.parameter).to.beNil();
 }
 
 - (void)test_when_a_host_not_match {
@@ -102,7 +102,7 @@ NSURL *URLWithPath(NSString *path) {
     FSRoutesMatchResult *result = [matcher match:url];
     expect(result).notTo.beNil();
     expect(result.match).to.equal(NO);
-    expect(result.parameter).to.equal(nil);
+    expect(result.parameter).to.beNil();
 }
 
 - (void)test_when_a_host_match_and_path_match {
@@ -113,7 +113,7 @@ NSURL *URLWithPath(NSString *path) {
     FSRoutesMatchResult *result = [matcher match:url];
     expect(result).notTo.beNil();
     expect(result.match).to.equal(YES);
-    expect(result.parameter).to.equal(@{});
+    expect(result.parameter).to.beNil();
 }
 
 - (void)test_when_a_host_not_match_and_path_match {
@@ -124,7 +124,7 @@ NSURL *URLWithPath(NSString *path) {
     FSRoutesMatchResult *result = [matcher match:url];
     expect(result).notTo.beNil();
     expect(result.match).to.equal(NO);
-    expect(result.parameter).to.equal(nil);
+    expect(result.parameter).to.beNil();
 }
 
 - (void)test_when_a_host_match_and_path_not_match {
@@ -135,7 +135,7 @@ NSURL *URLWithPath(NSString *path) {
     FSRoutesMatchResult *result = [matcher match:url];
     expect(result).notTo.beNil();
     expect(result.match).to.equal(NO);
-    expect(result.parameter).to.equal(nil);
+    expect(result.parameter).to.beNil();
 }
 
 - (void)test_when_a_host_not_match_and_path_not_match {
@@ -146,7 +146,7 @@ NSURL *URLWithPath(NSString *path) {
     FSRoutesMatchResult *result = [matcher match:url];
     expect(result).notTo.beNil();
     expect(result.match).to.equal(NO);
-    expect(result.parameter).to.equal(nil);
+    expect(result.parameter).to.beNil();
 }
 
 - (void)test_when_a_url_matches_a_route {
@@ -157,7 +157,7 @@ NSURL *URLWithPath(NSString *path) {
     FSRoutesMatchResult *result = [matcher match:url];
     expect(result).notTo.beNil();
     expect(result.match).to.equal(YES);
-    expect(result.parameter).to.equal(@{});
+    expect(result.parameter).to.beNil();
 }
 
 - (void)test_when_a_url_not_matches_a_route {
@@ -168,7 +168,7 @@ NSURL *URLWithPath(NSString *path) {
     FSRoutesMatchResult *result = [matcher match:url];
     expect(result).notTo.beNil();
     expect(result.match).to.equal(NO);
-    expect(result.parameter).to.equal(nil);
+    expect(result.parameter).to.beNil();
 }
     
 - (void)test_when_a_url_matches_a_route_with_1_parameter {
@@ -190,7 +190,7 @@ NSURL *URLWithPath(NSString *path) {
     FSRoutesMatchResult *result = [matcher match:url];
     expect(result).notTo.beNil();
     expect(result.match).to.equal(NO);
-    expect(result.parameter).to.equal(nil);
+    expect(result.parameter).to.beNil();
 }
     
 - (void)test_when_a_url_matches_a_route_with_2_parameter_style_1 {
@@ -236,12 +236,12 @@ NSURL *URLWithPath(NSString *path) {
     FSRoutesMatchResult *result = [matcher match:url];
     expect(result).notTo.beNil();
     expect(result.match).to.equal(YES);
-    expect(result.parameter).to.equal(@{});
+    expect(result.parameter).to.beNil();
     
     FSRoutesMatchResult *result2 = [matcher match:url2];
     expect(result2).notTo.beNil();
     expect(result.match).to.equal(YES);
-    expect(result2.parameter).to.equal(@{});
+    expect(result2.parameter).to.beNil();
 }
 
 - (void)test_wildcard_to_route_parameters {
@@ -289,7 +289,7 @@ NSURL *URLWithPath(NSString *path) {
     FSRoutesMatchResult *result = [matcher match:url];
     expect(result).notTo.beNil();
     expect(result.match).to.equal(NO);
-    expect(result.parameter).to.equal(nil);
+    expect(result.parameter).to.beNil();
 }
 
 - (void)test_when_the_url_path_does_not_match_regex_id_parameter {
@@ -298,7 +298,7 @@ NSURL *URLWithPath(NSString *path) {
     FSRoutesMatchResult *result = [matcher match:url];
     expect(result).notTo.beNil();
     expect(result.match).to.equal(NO);
-    expect(result.parameter).to.equal(nil);
+    expect(result.parameter).to.beNil();
 }
 
 - (void)test_does_not_match_partial_strings {
@@ -307,7 +307,7 @@ NSURL *URLWithPath(NSString *path) {
     FSRoutesMatchResult *result = [matcher match:url];
     expect(result).notTo.beNil();
     expect(result.match).to.equal(NO);
-    expect(result.parameter).to.equal(nil);
+    expect(result.parameter).to.beNil();
 }
 
 - (void)test_matches_just_a_host_as_a_named_parameter {

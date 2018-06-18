@@ -31,4 +31,8 @@
     return self;
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@" url   : %@ \n rule  : %@ \n param : %@ ", self.URL, self.rule, self.routeParameters];
+}
+
 @end
