@@ -31,6 +31,12 @@
     return self;
 }
 
+- (id)copyWithZone:(nullable NSZone *)zone {
+    return [[self class] handleWithURL:self.URL
+                                  rule:self.rule
+                       routeParameters:self.routeParameters];
+}
+
 - (NSString *)description {
     return [NSString stringWithFormat:@" url   : %@ \n rule  : %@ \n param : %@ ", self.URL, self.rule, self.routeParameters];
 }

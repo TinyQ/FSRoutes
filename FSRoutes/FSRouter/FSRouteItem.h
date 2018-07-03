@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FSRouteItem : NSObject
+@interface FSRouteItem : NSObject <NSCopying>
 
 @property (nonatomic, copy) NSString *introdution;
 

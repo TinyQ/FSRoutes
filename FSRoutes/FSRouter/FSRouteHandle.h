@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FSRouteHandle : NSObject
+@interface FSRouteHandle : NSObject <NSCopying>
 
 /**
  The serialized URL representation of the Handler.

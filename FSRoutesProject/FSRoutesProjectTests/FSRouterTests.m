@@ -12,24 +12,12 @@
 
 @interface FSRouterTests : XCTestCase
 
-@property (nonatomic,strong) FSRouter *router;
-
 @end
 
 @implementation FSRouterTests
 
 - (void)setUp {
     [super setUp];
-    self.router = [[FSRouter alloc] init];
-    //
-    FSRouteItem *item = [[FSRouteItem alloc] init];
-    item.introdution = @"test introdution";
-    item.testURLs = @[@"https://github.com/TinyQ/FSRoutes"];
-    item.rules = @[@"/TinyQ/FSRoutes"];
-    //
-    [self.router addRoute:item handler:^BOOL(FSRouteHandle *handle) {
-        return YES;
-    }];
 }
 
 - (void)tearDown {
@@ -81,14 +69,53 @@
     expect([router canRoute:URL3]).to.beFalsy();
 }
 
-- (void)test_route_URL {
+- (void)test_router_handler {
+    FSRouter *router = [[FSRouter alloc] init];
+    //
+    FSRouteItem *item = [[FSRouteItem alloc] init];
+    item.introdution = @"test introdution";
+    item.testURLs = @[@"https://github.com/TinyQ/FSRoutes"];
+    item.rules = @[@"/TinyQ/FSRoutes"];
+    
+    __block FSRouteHandle *result = nil;
+    
+    [router addRoute:item handler:^BOOL(FSRouteHandle *handle) {
+        result = [handle copy];
+        return YES;
+    }];
+    
     NSURL *URL = [NSURL URLWithString:@"https://github.com/TinyQ/FSRoutes"];
-    expect([self.router routeURL:URL]).to.beTruthy();
+    expect([router routeURL:URL]).to.beTruthy();
+    expect(result).notTo.beNil();
+    expect(result.URL.absoluteString).to.equal(URL.absoluteString);
+    expect(result.rule).to.equal(@"/TinyQ/FSRoutes");
+    expect(result.queryParameters).to.beNil();
+    expect(result.routeParameters).to.beNil();
 }
 
-- (void)test_route_URL_with_query_parameters {
+- (void)test_router_handler_with_query_parameters {
+    FSRouter *router = [[FSRouter alloc] init];
+    //
+    FSRouteItem *item = [[FSRouteItem alloc] init];
+    item.introdution = @"test introdution";
+    item.testURLs = @[@"https://github.com/TinyQ/FSRoutes"];
+    item.rules = @[@"/TinyQ/FSRoutes"];
+    
+    __block FSRouteHandle *result = nil;
+    
+    [router addRoute:item handler:^BOOL(FSRouteHandle *handle) {
+        result = [handle copy];
+        return YES;
+    }];
+    
     NSURL *URL = [NSURL URLWithString:@"https://github.com/TinyQ/FSRoutes?abc=123&def=456"];
-    expect([self.router routeURL:URL]).to.beTruthy();
+    
+    expect([router routeURL:URL]).to.beTruthy();
+    expect(result).notTo.beNil();
+    expect(result.URL).to.equal(URL);
+    expect(result.rule).to.equal(@"/TinyQ/FSRoutes");
+    expect(result.queryParameters).to.equal(@{@"abc":@"123", @"def":@"456"});
+    expect(result.routeParameters).to.beNil();
 }
 
 @end
