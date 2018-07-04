@@ -118,4 +118,32 @@
     expect(result.routeParameters).to.beNil();
 }
 
+- (void)test_router_handler_with_unmatch_handler {
+    FSRouter *router = [[FSRouter alloc] init];
+    //
+    FSRouteItem *item = [[FSRouteItem alloc] init];
+    item.introdution = @"test introdution";
+    item.testURLs = @[@"https://github.com/TinyQ/FSRoutes"];
+    item.rules = @[@"/TinyQ/FSRoutes"];
+    //
+    __block FSRouteHandle *result = nil;
+    [router addRoute:item handler:^BOOL(FSRouteHandle * _Nonnull handle) {
+        result = [handle copy];
+        return YES;
+    }];
+    //
+    __block FSRouteHandle *unmatchResult = nil;
+    [router setUnmatchedURLHandler:^(FSRouteHandle * _Nonnull handle) {
+        unmatchResult = [handle copy];
+    }];
+    
+    NSURL *URL = [NSURL URLWithString:@"https://github.com/TinyQ/Unmatch/FSRoutes?abc=123&def=456"];
+    
+    expect([router canRoute:URL]).to.beFalsy();
+    expect([router routeURL:URL]).to.beFalsy();
+    expect(result).to.beNil();
+    expect(unmatchResult).notTo.beNil();
+    expect(unmatchResult.URL).to.equal(URL);
+}
+
 @end

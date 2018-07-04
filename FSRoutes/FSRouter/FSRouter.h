@@ -9,9 +9,10 @@
 @class FSRouteItem;
 @class FSRouteHandle;
 
-typedef BOOL (^FSRouteHandler)(FSRouteHandle *handle);
-
 NS_ASSUME_NONNULL_BEGIN
+
+typedef BOOL (^FSRouteHandler)(FSRouteHandle *handle);
+typedef void (^FSRouteUnmatchedHandler)(FSRouteHandle *handle);
 
 @interface FSRouter : NSObject
 
@@ -20,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSMutableDictionary<NSString *, id> *handlers;
 
 - (void)addRoute:(FSRouteItem *)route handler:(FSRouteHandler)handler;
+
+- (void)setUnmatchedURLHandler:(FSRouteUnmatchedHandler)handler;
 
 - (BOOL)canRoute:(NSURL *)URL;
 

@@ -18,6 +18,8 @@
 @property (nonatomic) NSMutableOrderedSet<NSString *> *rules;
 @property (nonatomic) NSMutableDictionary<NSString *, id> *handlers;
 
+@property (nonatomic, copy) FSRouteHandler unmatchedHandler;
+
 @end
 
 @implementation FSRouter
@@ -41,6 +43,12 @@
     for (NSString *rule in route.rules) {
         [self.rules addObject:rule];
         [self.handlers setObject:handler forKey:rule];
+    }
+}
+
+- (void)setUnmatchedURLHandler:(FSRouteUnmatchedHandler)handler {
+    if (handler) {
+        self.unmatchedHandler = [handler copy];
     }
 }
 
@@ -82,6 +90,15 @@
             break;
         }
     }
+    
+    // if, after everything, we did not route anything and we have an unmatched URL handler, then call it
+    if (!isMatched && executeHandler && self.unmatchedHandler) {
+        FSRouteHandle *handle = [FSRouteHandle handleWithURL:URL
+                                                        rule:nil
+                                             routeParameters:nil];
+        self.unmatchedHandler(handle);
+    }
+    
     return didRoute;
 }
 

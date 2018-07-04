@@ -17,9 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly) NSURL *URL;
 
 /**
- The serialized Rule representation of the Handler.
+ The serialized Rule representation of the Handler. When in UnmatchedURLHandler, rule is null.
  */
-@property (nonatomic, copy, readonly) NSString *rule;
+@property (nonatomic, copy, readonly, nullable) NSString *rule;
 
 /**
  The query parameters parsed from the incoming URL.
@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
  Create a FSRouteHandle instance.
  */
 + (instancetype)handleWithURL:(NSURL *)URL
-                         rule:(NSString *)rule
+                         rule:(nullable NSString *)rule
               routeParameters:(nullable NSDictionary *)routeParameters;
 
 - (instancetype) init __attribute__((unavailable("init not available, call static instead")));

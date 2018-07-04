@@ -22,7 +22,6 @@
     self = [super init];
     if (self) {
         NSParameterAssert(URL);
-        NSParameterAssert(rule);
         _URL = URL;
         _rule = rule;
         _queryParameters = [[_URL query] fs_parametersFromQueryString];
