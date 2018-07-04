@@ -6,7 +6,7 @@
 
 FSRoutes is URL routing library for iOS with a simple block-based API
 
-![images](Images/FSRoutes.png)
+![images](Images/FSRoutes-top.png)
 
 ## Usage
 
