@@ -26,13 +26,13 @@
 
 - (void)test_initialization {
     NSURL *URL = [NSURL URLWithString:@"https://github.com/TinyQ/FSRoutes"];
-    FSRouteHandle *handle = [FSRouteHandle handleWithURL:URL rule:@"/TinyQ/FSRoutes" routeParameters:nil];
+    FSRouteHandle *handle = [FSRouteHandle handleWithURL:URL rule:@"/TinyQ/FSRoutes" routeParameters:nil contextParameters:nil];
     expect(handle).notTo.beNil();
 }
 
 - (void)test_when_url_not_parameters {
     NSURL *URL = [NSURL URLWithString:@"https://github.com/TinyQ/FSRoutes"];
-    FSRouteHandle *handle = [FSRouteHandle handleWithURL:URL rule:@"/TinyQ/FSRoutes" routeParameters:nil];
+    FSRouteHandle *handle = [FSRouteHandle handleWithURL:URL rule:@"/TinyQ/FSRoutes" routeParameters:nil contextParameters:nil];
     expect(handle).notTo.beNil();
     expect(handle.URL.absoluteString).equal(@"https://github.com/TinyQ/FSRoutes");
     expect(handle.rule).equal(@"/TinyQ/FSRoutes");
@@ -42,7 +42,7 @@
 
 - (void)test_has_route_parameters {
     NSURL *URL = [NSURL URLWithString:@"https://github.com/TinyQ/FSRoutes"];
-    FSRouteHandle *handle = [FSRouteHandle handleWithURL:URL rule:@"/TinyQ/FSRoutes" routeParameters:@{@"abc":@"def"}];
+    FSRouteHandle *handle = [FSRouteHandle handleWithURL:URL rule:@"/TinyQ/FSRoutes" routeParameters:@{@"abc":@"def"} contextParameters:nil];
     expect(handle).notTo.beNil();
     expect(handle.URL.absoluteString).equal(@"https://github.com/TinyQ/FSRoutes");
     expect(handle.rule).equal(@"/TinyQ/FSRoutes");
@@ -52,12 +52,23 @@
 
 - (void)test_has_query_parameters {
     NSURL *URL = [NSURL URLWithString:@"https://github.com/TinyQ/FSRoutes?abc=123&def=456"];
-    FSRouteHandle *handle = [FSRouteHandle handleWithURL:URL rule:@"/TinyQ/FSRoutes" routeParameters:@{@"abc":@"def"}];
+    FSRouteHandle *handle = [FSRouteHandle handleWithURL:URL rule:@"/TinyQ/FSRoutes" routeParameters:@{@"abc":@"def"} contextParameters:nil];
     expect(handle).notTo.beNil();
     expect(handle.URL.absoluteString).equal(@"https://github.com/TinyQ/FSRoutes?abc=123&def=456");
     expect(handle.rule).equal(@"/TinyQ/FSRoutes");
     expect(handle.queryParameters).equal(@{@"abc":@"123", @"def":@"456"});
     expect(handle.routeParameters).equal(@{@"abc":@"def"});
+}
+
+- (void)test_has_context_parameters {
+    NSURL *URL = [NSURL URLWithString:@"https://github.com/TinyQ/FSRoutes?abc=123&def=456"];
+    FSRouteHandle *handle = [FSRouteHandle handleWithURL:URL rule:@"/TinyQ/FSRoutes" routeParameters:@{@"abc":@"def"} contextParameters:@{@"abc":@"def"}];
+    expect(handle).notTo.beNil();
+    expect(handle.URL.absoluteString).equal(@"https://github.com/TinyQ/FSRoutes?abc=123&def=456");
+    expect(handle.rule).equal(@"/TinyQ/FSRoutes");
+    expect(handle.queryParameters).equal(@{@"abc":@"123", @"def":@"456"});
+    expect(handle.routeParameters).equal(@{@"abc":@"def"});
+    expect(handle.contextParameters).equal(@{@"abc":@"def"});
 }
 
 @end

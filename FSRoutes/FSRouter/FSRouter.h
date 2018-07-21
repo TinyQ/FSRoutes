@@ -28,6 +28,8 @@ typedef void (^FSRouteUnmatchedHandler)(FSRouteHandle *handle);
 
 - (BOOL)routeURL:(NSURL *)URL;
 
+- (BOOL)routeURL:(NSURL *)URL context:(nullable NSDictionary<NSString *,id> *)context;
+
 @end
 
 NS_ASSUME_NONNULL_END

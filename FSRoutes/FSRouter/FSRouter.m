@@ -54,17 +54,24 @@
 
 - (BOOL)canRoute:(NSURL *)URL {
     NSParameterAssert(URL);
-    return [self routeURL:URL executeHandler:NO];
+    return [self routeURL:URL context:nil executeHandler:NO];
 }
 
 - (BOOL)routeURL:(NSURL *)URL {
     NSParameterAssert(URL);
-    return [self routeURL:URL executeHandler:YES];
+    return [self routeURL:URL context:nil executeHandler:YES];
+}
+
+- (BOOL)routeURL:(NSURL *)URL context:(nullable NSDictionary<NSString *,id> *)context {
+    NSParameterAssert(URL);
+    return [self routeURL:URL context:context executeHandler:YES];
 }
 
 #pragma mark - Private
 
-- (BOOL)routeURL:(NSURL *)URL executeHandler:(BOOL)executeHandler {
+- (BOOL)routeURL:(NSURL *)URL
+         context:(nullable NSDictionary<NSString *,id> *)context
+  executeHandler:(BOOL)executeHandler {
     NSParameterAssert(URL);
     
     BOOL didRoute = NO;
@@ -84,7 +91,7 @@
             return YES;
         }
         isMatched = YES;
-        didRoute = [self executeURL:URL rule:rule result:matchResult];
+        didRoute = [self executeURL:URL rule:rule result:matchResult context:context];
         // if it was routed successfully, we're done.
         if(didRoute) {
             break;
@@ -95,7 +102,8 @@
     if (!isMatched && executeHandler && self.unmatchedHandler) {
         FSRouteHandle *handle = [FSRouteHandle handleWithURL:URL
                                                         rule:nil
-                                             routeParameters:nil];
+                                             routeParameters:nil
+                                           contextParameters:context];
         self.unmatchedHandler(handle);
     }
     
@@ -104,7 +112,8 @@
 
 - (BOOL)executeURL:(NSURL *)URL
               rule:(NSString *)rule
-            result:(FSRoutesMatchResult *)result {
+            result:(FSRoutesMatchResult *)result
+           context:(nullable NSDictionary<NSString *,id> *)context{
     NSParameterAssert(URL);
     NSParameterAssert(rule);
     NSParameterAssert(result);
@@ -116,7 +125,8 @@
     
     FSRouteHandle *handle = [FSRouteHandle handleWithURL:URL
                                                     rule:rule
-                                         routeParameters:result.parameter];
+                                         routeParameters:result.parameter
+                                       contextParameters:context];
     return handler(handle);
 }
 

@@ -32,11 +32,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly, nullable) NSDictionary *routeParameters;
 
 /**
+ A dictionary of values keyed by their parameterized context parameter in the open url with context.
+ */
+@property (nonatomic, copy, readonly, nullable) NSDictionary *contextParameters;
+/**
  Create a FSRouteHandle instance.
  */
 + (instancetype)handleWithURL:(NSURL *)URL
                          rule:(nullable NSString *)rule
-              routeParameters:(nullable NSDictionary *)routeParameters;
+              routeParameters:(nullable NSDictionary *)routeParameters
+            contextParameters:(nullable NSDictionary *)contextParameters;
 
 - (instancetype) init __attribute__((unavailable("init not available, call static instead")));
 + (instancetype) new __attribute__((unavailable("new not available, call static instead")));

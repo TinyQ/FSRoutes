@@ -11,14 +11,19 @@
 @implementation FSRouteHandle
 
 + (instancetype)handleWithURL:(NSURL*)URL
-                         rule:(NSString *)rule
-              routeParameters:(NSDictionary *)routeParameters {
-    return [[FSRouteHandle alloc] initWithURL:URL rule:rule routeParameters:routeParameters];
+                         rule:(nullable NSString *)rule
+              routeParameters:(nullable NSDictionary *)routeParameters
+            contextParameters:(nullable NSDictionary *)contextParameters {
+    return [[FSRouteHandle alloc] initWithURL:URL
+                                         rule:rule
+                              routeParameters:routeParameters
+                            contextParameters:contextParameters];
 }
 
 - (instancetype)initWithURL:(NSURL*)URL
                        rule:(NSString *)rule
-            routeParameters:(NSDictionary *)routeParameters {
+            routeParameters:(NSDictionary *)routeParameters
+          contextParameters:(NSDictionary *)contextParameters {
     self = [super init];
     if (self) {
         NSParameterAssert(URL);
@@ -26,6 +31,7 @@
         _rule = rule;
         _queryParameters = [[_URL query] fs_parametersFromQueryString];
         _routeParameters = [routeParameters copy];
+        _contextParameters = [contextParameters copy];
     }
     return self;
 }
@@ -33,7 +39,8 @@
 - (id)copyWithZone:(nullable NSZone *)zone {
     return [[self class] handleWithURL:self.URL
                                   rule:self.rule
-                       routeParameters:self.routeParameters];
+                       routeParameters:self.routeParameters
+                     contextParameters:self.contextParameters];
 }
 
 - (NSString *)description {
