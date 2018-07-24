@@ -10,7 +10,6 @@
 #import "FSRouteHandle.h"
 #import "FSRoutesMatcher.h"
 #import "FSRoutesMatchResult.h"
-#import "NSURL+FSRouteParameters.h"
 
 @interface FSRouter()
 
