@@ -7,10 +7,14 @@
 
 #import <Foundation/Foundation.h>
 @class FSRouter;
+@class FSRouteItem;
+@class FSRouteHandle;
 
 @interface FSRouterManager : NSObject
 
 @property (nonatomic, readonly) FSRouter *router;
 @property (nonatomic, readonly, class) FSRouterManager *shared;
+
+- (void)loadAllRoutes;
 
 @end

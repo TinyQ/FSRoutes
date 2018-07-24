@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <FSRoutes/FSRoutes.h>
 
 @interface AppDelegate ()
 
@@ -15,7 +16,10 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    // load all routes form FSRouterManager`s category.
+    [[FSRouterManager shared] loadAllRoutes];
+    
     return YES;
 }
 

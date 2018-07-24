@@ -19,6 +19,7 @@
 		E09255D820CD6F49003275A6 /* FSRoutesMatchResultTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E09255D720CD6F49003275A6 /* FSRoutesMatchResultTests.m */; };
 		E0A7EC8E20D57E47003FF8CE /* FSRouteHandleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A7EC8D20D57E47003FF8CE /* FSRouteHandleTests.m */; };
 		E0AB752A1F76C38E00CB9E96 /* FSRoutesMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AB75291F76C38E00CB9E96 /* FSRoutesMatcherTests.m */; };
+		E0B70704210776750062D658 /* FSRouterManager+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B70703210776750062D658 /* FSRouterManager+Test.m */; };
 		E0BB568420D780F7009CA6C8 /* FSRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BB568320D780F7009CA6C8 /* FSRouterTests.m */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,8 @@
 		E09255D720CD6F49003275A6 /* FSRoutesMatchResultTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSRoutesMatchResultTests.m; sourceTree = "<group>"; };
 		E0A7EC8D20D57E47003FF8CE /* FSRouteHandleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSRouteHandleTests.m; sourceTree = "<group>"; };
 		E0AB75291F76C38E00CB9E96 /* FSRoutesMatcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSRoutesMatcherTests.m; sourceTree = "<group>"; };
+		E0B70702210776750062D658 /* FSRouterManager+Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FSRouterManager+Test.h"; sourceTree = "<group>"; };
+		E0B70703210776750062D658 /* FSRouterManager+Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FSRouterManager+Test.m"; sourceTree = "<group>"; };
 		E0BB568320D780F7009CA6C8 /* FSRouterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSRouterTests.m; sourceTree = "<group>"; };
 		EAF8535B81DCEC104BADA2F6 /* Pods-FSRoutesProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSRoutesProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FSRoutesProjectTests/Pods-FSRoutesProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		EC85F37783B757780E4E6AAD /* libPods-FSRoutesProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FSRoutesProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +122,7 @@
 		E0196F8D1F70381E002C12A5 /* FSRoutesProject */ = {
 			isa = PBXGroup;
 			children = (
+				E0B707012107765A0062D658 /* Routers */,
 				E0196F8E1F70381E002C12A5 /* AppDelegate.h */,
 				E0196F8F1F70381E002C12A5 /* AppDelegate.m */,
 				E0196F911F70381E002C12A5 /* ViewController.h */,
@@ -151,6 +155,15 @@
 				E0196FB41F70381E002C12A5 /* Info.plist */,
 			);
 			path = FSRoutesProjectUITests;
+			sourceTree = "<group>";
+		};
+		E0B707012107765A0062D658 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				E0B70702210776750062D658 /* FSRouterManager+Test.h */,
+				E0B70703210776750062D658 /* FSRouterManager+Test.m */,
+			);
+			path = Routers;
 			sourceTree = "<group>";
 		};
 		ECBD441D60D67B43CB46F0CB /* Frameworks */ = {
@@ -348,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0196F931F70381E002C12A5 /* ViewController.m in Sources */,
+				E0B70704210776750062D658 /* FSRouterManager+Test.m in Sources */,
 				E0196F9E1F70381E002C12A5 /* main.m in Sources */,
 				E0196F901F70381E002C12A5 /* AppDelegate.m in Sources */,
 			);
